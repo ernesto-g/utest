@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1460469855 source:/home/mauro/Documentos/workspace_c/utest/lib/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460469917 /home/mauro/Documentos/workspace_c/utest/lib/utest.h
+
+1460486212 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	"../testing/inc/main_test.h"
+
+1460469855 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/lib/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460469917 /home/mauro/Documentos/workspace_c/utest/examples/example_1/lib/utest.h
+
+1460483123 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/src/firstTest.c
+	<utest.h>
+	<utest.c>
+
+1460470560 /home/mauro/Documentos/workspace_c/utest/examples/example_1/src/firstTest.h
+
+1460486212 /home/mauro/Documentos/workspace_c/utest/utest.h
+
+1460482967 /home/mauro/Documentos/workspace_c/utest/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460484671 /home/mauro/Documentos/workspace_c/utest/examples/example_1/inc/main_test.h
+
+1460484831 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/firstTest.c
+
+1460484818 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/secondTest.c
+
+1460484671 /home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/inc/main_test.h
+
+1460486298 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/src/firstTest.c
+	<utest.h>
+
+1460486430 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/src/main_test.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../inc/firstTest.h"
+	"../inc/secondTest.h"
+
+1460485472 /home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/inc/firstTest.h
+
+1460485519 /home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/inc/secondTest.h
+
+1460486298 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/src/secondTest.c
+	<utest.h>
+
+1460486256 source:/home/mauro/Documentos/workspace_c/utest/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460487195 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/firstTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+
+1460487195 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/main_test.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../inc/firstTest.h"
+	"../inc/secondTest.h"
+
+1460487195 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/firstTest.h
+
+1460487253 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/secondTest.h
+
+1460487195 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/secondTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+
+1460492157 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/src/array.c
+
+1460493430 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	"../testing/inc/main_test.h"
+
+1460484671 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/main_test.h
+
