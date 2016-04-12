@@ -18,14 +18,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "firstTest.h"
+#include "../testing/inc/main_test.h"
 
 #define TEST
 
 
 int main(void)
 {
-    #ifndef TEST
+    #ifdef TEST
         startTesting();
     #endif
 

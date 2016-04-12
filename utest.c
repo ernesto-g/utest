@@ -20,6 +20,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char utest_printBuffer[256];
+int utest_flagTestError;
+int utest_lineTestError;
+char* utest_fileTestError;
+int utest_totalTestsCounter;
+int utest_okTestsCounter;
+int utest_varAux;
 
 void utest_init(void)
 {

@@ -15,34 +15,36 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include <utest.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "utest.h"
-#include "utest.c"
+#include "../inc/firstTest.h"
+#include "../inc/secondTest.h"
 
-
-void testSetup(void)
-{
-	utest_print("Setup...\r\n");
-}
-
-void testCase(void)
-{
-	utest_assertEqualsInt(5,5);
-}
 
 void startTesting(void)
 {
+
     utest_print("starting testings...\r\n");
 
-	utest_init();
+    // Start Group 01
+    utest_init();
+    utest_startTest(firstTestCase01,firstTestSetup,"Test Group 01 Case 01");
+    utest_startTest(firstTestCase02,firstTestSetup,"Test Group 01 Case 02");
+    utest_startTest(firstTestCase03,firstTestSetup,"Test Group 01 Case 03");
+    utest_printStatistics();
+    // End Group 01
 
-	utest_startTest(testCase,testSetup,"Test Case 1");
-	//...
 
-	utest_printStatistics();
-}
+    // Start Group 02
+    utest_init();
+    utest_startTest(secondTestCase01,secondTestSetup,"Test Group 02 Case 01");
+    utest_startTest(secondTestCase02,secondTestSetup,"Test Group 02 Case 02");
+    utest_printStatistics();
+    // End Group 02
 
-void main(void)
-{
-	startTesting();
+
+
+
 }
