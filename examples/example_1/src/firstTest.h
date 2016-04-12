@@ -16,19 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "firstTest.h"
+void testSetup(void);
+void testCase(void);
+void startTesting(void);
 
-#define TEST
-
-
-int main(void)
-{
-    #ifndef TEST
-        startTesting();
-    #endif
-
-
-	return 0;
-}

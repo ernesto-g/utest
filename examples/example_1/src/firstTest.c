@@ -15,20 +15,28 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include "../lib/utest.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "firstTest.h"
-
-#define TEST
-
-
-int main(void)
+void testSetup(void)
 {
-    #ifndef TEST
-        startTesting();
-    #endif
-
-
-	return 0;
+	utest_print("Setup...\r\n");
 }
+
+void testCase(void)
+{
+	utest_assertEqualsInt(5,5);
+
+}
+
+void startTesting(void)
+{
+    utest_print("starting testings...\r\n");
+
+	utest_init();
+
+	utest_startTest(testCase,testSetup,"Test Case 1");
+	//...
+
+	utest_printStatistics();
+}
+

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1460469855 source:/home/mauro/Documentos/workspace_c/utest/lib/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460469917 /home/mauro/Documentos/workspace_c/utest/lib/utest.h
+
+1460470642 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	"firstTest.h"
+
+1460469855 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/lib/utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460469917 /home/mauro/Documentos/workspace_c/utest/examples/example_1/lib/utest.h
+
+1460470642 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/src/firstTest.c
+	"../lib/utest.h"
+
+1460470560 /home/mauro/Documentos/workspace_c/utest/examples/example_1/src/firstTest.h
+

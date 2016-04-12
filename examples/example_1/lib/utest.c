@@ -17,14 +17,9 @@
 */
 
 #include "utest.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-static char utest_printBuffer[256];
-static int utest_flagTestError;
-static int utest_lineTestError;
-static char* utest_fileTestError;
-static int utest_totalTestsCounter;
-static int utest_okTestsCounter;
-static int utest_varAux;
 
 void utest_init(void)
 {

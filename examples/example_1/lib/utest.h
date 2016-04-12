@@ -19,6 +19,14 @@
 #ifndef UTEST_H
 #define UTEST_H
 
+static char utest_printBuffer[256];
+static int utest_flagTestError;
+static int utest_lineTestError;
+static char* utest_fileTestError;
+static int utest_totalTestsCounter;
+static int utest_okTestsCounter;
+static int utest_varAux;
+
 // Redefine this macros for specified architecture
 #define utest_print(MSG)     printf(MSG)
 #define utest_print1(MSG,VAR1)   { sprintf(utest_printBuffer,MSG,VAR1); printf(utest_printBuffer);}
