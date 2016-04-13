@@ -27,24 +27,24 @@
 void startTesting(void)
 {
 
-    utest_print("starting testings...\r\n");
-
     // Start Group 01
+    utest_print("\nStarting testings of sortNames()...\r\n\n");
     utest_init();
-    utest_startTest(firstTestCase01,firstTestSetup,"Test Group 01 Case 01");
-    utest_startTest(firstTestCase02,firstTestSetup,"Test Group 01 Case 02");
-    utest_startTest(firstTestCase03,firstTestSetup,"Test Group 01 Case 03");
+    utest_startTest(firstTestCase01,firstTestSetup,"Case: Order UP");
+    utest_startTest(firstTestCase02,firstTestSetup,"Case: Order DOWN");
+    utest_startTest(firstTestCase03,firstTestSetup,"Case: Invalid length");
     utest_printStatistics();
     // End Group 01
 
 
+/*
     // Start Group 02
     utest_init();
     utest_startTest(secondTestCase01,secondTestSetup,"Test Group 02 Case 01");
     utest_startTest(secondTestCase02,secondTestSetup,"Test Group 02 Case 02");
     utest_printStatistics();
     // End Group 02
-
+*/
 
 
 

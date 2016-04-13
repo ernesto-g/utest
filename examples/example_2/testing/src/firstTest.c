@@ -20,6 +20,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//INCLUDE LIBRARY TO TEST
+#include "../../inc/array.h"
+
+//DEFINES OF THIS TEST
+#define LENGTH 6
+
+static char* unsortedList[] = {"Za","Zb","Xd","Xb","Ya","Yc"};
+static char* sortedListUp[] = {"Xb","Xd","Ya","Yc","Za","Zb"};
+static char* sortedListDown[] = {"Zb","Za","Yc","Ya","Xd","Xb"};
+
 void firstTestSetup(void)
 {
 	utest_print("Setup...\r\n");
@@ -27,19 +37,33 @@ void firstTestSetup(void)
 
 void firstTestCase01(void)
 {
-	utest_assertEqualsInt(5,5);
+    int i;
+    sortNames(unsortedList, LENGTH, 1); // Thirth parameter at 1 indicate UP order
+    for (i=0;i < LENGTH;i++)
+    {
+        utest_assertEqualsString(sortedListUp[i],unsortedList[i],2);
+    }
 
 }
 
 void firstTestCase02(void)
 {
-    // Error
-	utest_assertEqualsInt(4,5);
+    int i;
+    sortNames(unsortedList, LENGTH, 0); // Thirth parameter at 1 indicate UP order
+    for (i=0;i < LENGTH;i++)
+    {
+        utest_assertEqualsString(sortedListDown[i],unsortedList[i],2);
+    }
 
 }
 
 void firstTestCase03(void)
 {
-	utest_assertEqualsInt(5,5);
-
+    int i;
+    i = sortNames(unsortedList, -1, 0); // Thirth parameter at 1 indicate UP order
+    utest_assertEqualsInt(-1,i);
+    i = sortNames(unsortedList, 0, 0); // Thirth parameter at 1 indicate UP order
+    utest_assertEqualsInt(-1,i);
+    i = sortNames(unsortedList, 1, 0); // Thirth parameter at 1 indicate UP order
+    utest_assertEqualsInt(0,i);
 }

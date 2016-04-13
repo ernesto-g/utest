@@ -21,67 +21,39 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../testing/inc/main_test.h"
+#include "../inc/array.h"
 
 #define ELEMENTS 5
-//#define TEST
+#define TEST
 
-int run();
+int run(void);
 
 int main(void)
 {
+
     #ifdef TEST
         startTesting();
-
     #else
         run();
-
     #endif
 
-
-	return 0;
-}
-
-int sortName(char** pName, int length)
-{
-    char auxName[50];
-    int i,j;
-
-    for(i=0;i< length-1;i++)
-	{
-		for(j=i+1;j<length;j++)
-		{
-			if(strcmp(pName[i],pName[j])>1)
-			{
-				strcpy(auxName,pName[i]);
-				strcpy(pName[i],pName[j]);
-                strcpy(pName[j], auxName);
-
-			}
-		}
-	}
     return 0;
 }
 
 
-int run()
+
+int run(void)
 {
-    int i;
     char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
 
 
     printf("\n\nOriginal List\n--------------");
-    for(i=0;i<ELEMENTS;i++)
-    {
-        printf("\nName: %s",names[i]);
-    }
+    printNames(names, ELEMENTS);
 
-    sortName(names, ELEMENTS);
+    sortNames(names, ELEMENTS, 1);
 
-	printf("\n\nSorted list\n--------------");
-    for(i=0;i<ELEMENTS;i++)
-    {
-        printf("\nName: %s",names[i]);
-    }
+    printf("\n\nSorted list\n--------------");
+    printNames(names, ELEMENTS);
 
     return 0;
 }
