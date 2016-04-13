@@ -20,6 +20,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//INCLUDE LIBRARY TO TEST
+#include "../../inc/array.h"
+
+//DEFINES OF THIS TEST
+#define LENGTH 6
+
+static char* unsortedList[] = {"Za","Zb","Xd","Xb","Ya","Yc"};
+
 
 void secondTestSetup(void)
 {
@@ -28,12 +36,24 @@ void secondTestSetup(void)
 
 void secondTestCase01(void)
 {
-	utest_assertEqualsInt(5,5);
-
+    int i;
+    i = findName(unsortedList, LENGTH, "Xd");
+    utest_assertEqualsInt(2,i);
 }
 
 void secondTestCase02(void)
 {
-	utest_assertEqualsInt(5,5);
+    int i;
+    i = findName(unsortedList, LENGTH, "Rd");
+    utest_assertEqualsInt(-1,i);
+}
+
+void secondTestCase03(void)
+{
+    int i;
+    i = findName(unsortedList, -1, "Xd");
+    utest_assertEqualsInt(-1,i);
+    i = findName(unsortedList, 0, "Xd");
+    utest_assertEqualsInt(-1,i);
 
 }

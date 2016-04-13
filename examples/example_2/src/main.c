@@ -44,6 +44,7 @@ int main(void)
 
 int run(void)
 {
+    int namePosition;
     char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
 
 
@@ -55,5 +56,7 @@ int run(void)
     printf("\n\nSorted list\n--------------");
     printNames(names, ELEMENTS);
 
+    namePosition = findName(names, ELEMENTS, "Sheldon");
+    printf("\n\nSheldon is in position number: %d",namePosition+1);
     return 0;
 }

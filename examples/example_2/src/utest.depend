@@ -67,7 +67,7 @@
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460563984 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/main_test.c
+1460565677 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/main_test.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
@@ -76,19 +76,20 @@
 
 1460487195 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/firstTest.h
 
-1460487253 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/secondTest.h
+1460565677 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/secondTest.h
 
-1460487195 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/secondTest.c
+1460565677 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/secondTest.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
+	"../../inc/array.h"
 
-1460564314 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/src/array.c
+1460564931 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/src/array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1460563425 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/src/main.c
+1460565683 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/src/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -97,5 +98,5 @@
 
 1460484671 /home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/inc/main_test.h
 
-1460562675 /home/mauro/Documentos/workspace_c/utest/examples/example_2/inc/array.h
+1460564931 /home/mauro/Documentos/workspace_c/utest/examples/example_2/inc/array.h
 

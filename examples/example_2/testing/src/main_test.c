@@ -37,14 +37,15 @@ void startTesting(void)
     // End Group 01
 
 
-/*
     // Start Group 02
+    utest_print("\nStarting testings of findName()...\r\n\n");
     utest_init();
-    utest_startTest(secondTestCase01,secondTestSetup,"Test Group 02 Case 01");
-    utest_startTest(secondTestCase02,secondTestSetup,"Test Group 02 Case 02");
+    utest_startTest(secondTestCase01,secondTestSetup,"Case: Found a name");
+    utest_startTest(secondTestCase02,secondTestSetup,"Case: Not Found a name");
+    utest_startTest(secondTestCase03,secondTestSetup,"Case: Invalid length");
     utest_printStatistics();
     // End Group 02
-*/
+
 
 
 

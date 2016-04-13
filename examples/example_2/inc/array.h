@@ -18,3 +18,4 @@
 
 int sortNames(char** pName, int length, int order);
 int printNames(char** pName, int length);
+int findName(char** pName, int length, char* nameToFind);

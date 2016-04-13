@@ -57,6 +57,22 @@ int sortNames(char** pName, int length,int order)
     return 0;
 }
 
+int findName(char** pName, int length, char* nameToFind)
+{
+    int i;
+
+    if (length < 1) // Invalid length
+    {
+        return -1;
+    }
+    for(i=0; i< length; i++)
+    {
+        if(strcmp(pName[i],nameToFind)==0)
+            return i;
+    }
+    return -1;
+}
+
 int printNames(char** pName, int length)
 {
     int i;
