@@ -32,7 +32,9 @@ void startTesting(void)
     utest_init();
     utest_startTest(firstTestCase01,firstTestSetup,"Case: Order UP");
     utest_startTest(firstTestCase02,firstTestSetup,"Case: Order DOWN");
-    utest_startTest(firstTestCase03,firstTestSetup,"Case: Invalid length");
+    utest_startTest(firstTestCase03,firstTestSetup,"Case: Invalid length [-1]");
+    utest_startTest(firstTestCase04,firstTestSetup,"Case: Invalid length [0]");
+    utest_startTest(firstTestCase05,firstTestSetup,"Case: Valid length");
     utest_printStatistics();
     // End Group 01
 

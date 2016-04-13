@@ -20,7 +20,8 @@ void firstTestSetup(void);
 void firstTestCase01(void);
 void firstTestCase02(void);
 void firstTestCase03(void);
-
+void firstTestCase04(void);
+void firstTestCase05(void);
 
 
 

@@ -41,7 +41,7 @@ void firstTestCase01(void)
     sortNames(unsortedList, LENGTH, 1); // Thirth parameter at 1 indicate UP order
     for (i=0;i < LENGTH;i++)
     {
-        utest_assertEqualsString(sortedListUp[i],unsortedList[i],2);
+        utest_assertEqualsStringMsg(sortedListUp[i],unsortedList[i],2,"Error in UP order ");
     }
 
 }
@@ -52,18 +52,34 @@ void firstTestCase02(void)
     sortNames(unsortedList, LENGTH, 0); // Thirth parameter at 1 indicate UP order
     for (i=0;i < LENGTH;i++)
     {
-        utest_assertEqualsString(sortedListDown[i],unsortedList[i],2);
+        utest_assertEqualsStringMsg(sortedListDown[i],unsortedList[i],2,"Error in DOWN order ");
     }
+
 
 }
 
 void firstTestCase03(void)
 {
     int i;
+
     i = sortNames(unsortedList, -1, 0); // Thirth parameter at 1 indicate UP order
-    utest_assertEqualsInt(-1,i);
+    utest_assertEqualsIntMsg(-1,i, "Error with [-1] like length parameter");
+
+}
+
+void firstTestCase04(void)
+{
+    int i;
+
     i = sortNames(unsortedList, 0, 0); // Thirth parameter at 1 indicate UP order
-    utest_assertEqualsInt(-1,i);
+    utest_assertEqualsIntMsg(-1,i, "Error with [0] like length parameter");
+
+}
+
+void firstTestCase05(void)
+{
+    int i;
+
     i = sortNames(unsortedList, 1, 0); // Thirth parameter at 1 indicate UP order
-    utest_assertEqualsInt(0,i);
+    utest_assertEqualsIntMsg(0,i, "Error correct length parameter");
 }
