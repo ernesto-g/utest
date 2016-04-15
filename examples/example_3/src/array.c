@@ -107,11 +107,11 @@ empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo)
 int printEmpleados(empleado* pEmpleado, int length)
 {
     int i;
-
+    printf("\nLegajo -      Nombre      -     Apellido     -  Fecha   - Salario - Sector");
     for(i=0; i< length; i++)
     {
         if(!pEmpleado[i].isEmpty)
-            printf("\nLegajo: %2i - Nombre: %s",pEmpleado[i].legajo, pEmpleado[i].nombre);
+            printf("\n%6i - %-16s - %-16s - %8ld - %4.2f - %6d",pEmpleado[i].legajo, pEmpleado[i].nombre, pEmpleado[i].apellido, pEmpleado[i].fechaIngreso, pEmpleado[i].salario, pEmpleado[i].sector );
     }
     return 0;
 }

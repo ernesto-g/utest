@@ -48,14 +48,17 @@ int run(void)
     empleado* pEmpleado;
     int i;
     char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
+    char* apellidos[] = {"Cooper","Penny","Wolowitz","Koothrappali","Hofstadter"};
+    int sector[] = {1,1,2,3,4};
+    char* fecha[] = {20160101,20160101,20160111,20150101,20160117};
+    float salario[] = {1000,1000,2000,3000,4000};
+    int legajo[] = {11,20,3,4,9};
 
     initEmpleados(arrayEmpleados, ELEMENTS);
 
     for(i=0; i < ELEMENTS; i++)
     {
-        strcpy(arrayEmpleados[i].nombre, names[i]);
-        arrayEmpleados[i].legajo = i*i;
-        addEmpleado(arrayEmpleados, ELEMENTS,i*i,names[i],names[i],100,1,20161101);
+        addEmpleado(arrayEmpleados, ELEMENTS,legajo[i],names[i],apellidos[i],salario[i],sector[i],fecha[i]);
     }
 
     removeEmpleado(arrayEmpleados, ELEMENTS,9);

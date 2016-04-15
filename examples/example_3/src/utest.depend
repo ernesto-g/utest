@@ -171,13 +171,13 @@
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460680887 source:d:\mauriciodavila\utest\examples\example_3\src\array.c
+1460682333 source:d:\mauriciodavila\utest\examples\example_3\src\array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../inc/array.h"
 
-1460680887 source:d:\mauriciodavila\utest\examples\example_3\src\main.c
+1460681668 source:d:\mauriciodavila\utest\examples\example_3\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
