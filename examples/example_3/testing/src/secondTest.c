@@ -16,47 +16,44 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
+#include <utest.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "../inc/array.h"
-#define ELEMENTS 5
 
-#include "../testing/inc/main_test.h"
-#define TEST
+//INCLUDE LIBRARY TO TEST
+#include "../../inc/array.h"
 
-int run(void);
+//DEFINES OF THIS TEST
+#define LENGTH 6
 
-int main(void)
+static char* unsortedList[] = {"Za","Zb","Xd","Xb","Ya","Yc"};
+
+
+void secondTestSetup(void)
 {
-
-    #ifdef TEST
-        startTesting();
-    #else
-        run();
-    #endif
-
-    return 0;
+	utest_print("Setup...\r\n");
 }
 
-
-
-int run(void)
+void secondTestCase01(void)
 {
-    int namePosition;
-    char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
+    int i;
+    //i = findName(unsortedList, LENGTH, "Xd");
+    utest_assertEqualsInt(2,i);
+}
 
+void secondTestCase02(void)
+{
+    int i;
+    //i = findName(unsortedList, LENGTH, "Rd");
+    utest_assertEqualsInt(-1,i);
+}
 
-    printf("\n\nOriginal List\n--------------");
-    printNames(names, ELEMENTS);
+void secondTestCase03(void)
+{
+    int i;
+    //i = findName(unsortedList, -1, "Xd");
+    utest_assertEqualsInt(-1,i);
+    //i = findName(unsortedList, 0, "Xd");
+    utest_assertEqualsInt(-1,i);
 
-    sortNames(names, ELEMENTS, 1);
-
-    printf("\n\nSorted list\n--------------");
-    printNames(names, ELEMENTS);
-
-    namePosition = findName(names, ELEMENTS, "Sheldon");
-    printf("\n\nSheldon is in position number: %d",namePosition+1);
-    return 0;
 }

@@ -16,47 +16,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../inc/array.h"
-#define ELEMENTS 5
-
-#include "../testing/inc/main_test.h"
-#define TEST
-
-int run(void);
-
-int main(void)
+struct
 {
+    int legajo;
+    char nombre[51];
+    char apellido[51];
+    float salario;
+    long int fechaIngreso;
+    int isEmpty;
+}typedef empleado;
 
-    #ifdef TEST
-        startTesting();
-    #else
-        run();
-    #endif
-
-    return 0;
-}
-
-
-
-int run(void)
-{
-    int namePosition;
-    char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
-
-
-    printf("\n\nOriginal List\n--------------");
-    printNames(names, ELEMENTS);
-
-    sortNames(names, ELEMENTS, 1);
-
-    printf("\n\nSorted list\n--------------");
-    printNames(names, ELEMENTS);
-
-    namePosition = findName(names, ELEMENTS, "Sheldon");
-    printf("\n\nSheldon is in position number: %d",namePosition+1);
-    return 0;
-}
+int sortEmpleadoByName(empleado* pEmpleado, int length, int order);
+empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo);
+int printNames(empleado* pEmpleado, int length);

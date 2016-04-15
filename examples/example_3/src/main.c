@@ -22,10 +22,10 @@
 #include <string.h>
 #include "../inc/array.h"
 #define ELEMENTS 5
-
+/*
 #include "../testing/inc/main_test.h"
 #define TEST
-
+*/
 int run(void);
 
 int main(void)
@@ -44,19 +44,28 @@ int main(void)
 
 int run(void)
 {
-    int namePosition;
+    empleado arrayEmpleados[ELEMENTS];
+    empleado* pEmpleado;
+    int i;
     char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
+
+    for(i=0; i < ELEMENTS; i++)
+    {
+        strcpy(arrayEmpleados[i].nombre, names[i]);
+        arrayEmpleados[i].legajo = i*i;
+    }
 
 
     printf("\n\nOriginal List\n--------------");
-    printNames(names, ELEMENTS);
+    printNames(arrayEmpleados, ELEMENTS);
 
-    sortNames(names, ELEMENTS, 1);
+    sortEmpleadoByName(arrayEmpleados, ELEMENTS, 1);
 
     printf("\n\nSorted list\n--------------");
-    printNames(names, ELEMENTS);
+    printNames(arrayEmpleados, ELEMENTS);
 
-    namePosition = findName(names, ELEMENTS, "Sheldon");
-    printf("\n\nSheldon is in position number: %d",namePosition+1);
+    pEmpleado = findEmpleadoByLegajo(arrayEmpleados, ELEMENTS, 9);
+    printf("\n\nEl legajo 9: %s",pEmpleado->nombre);
     return 0;
 }
+

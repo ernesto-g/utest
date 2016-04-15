@@ -16,47 +16,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../inc/array.h"
-#define ELEMENTS 5
-
-#include "../testing/inc/main_test.h"
-#define TEST
-
-int run(void);
-
-int main(void)
-{
-
-    #ifdef TEST
-        startTesting();
-    #else
-        run();
-    #endif
-
-    return 0;
-}
+void firstTestSetup(void);
+void firstTestCase01(void);
+void firstTestCase02(void);
+void firstTestCase03(void);
+void firstTestCase04(void);
+void firstTestCase05(void);
 
 
 
-int run(void)
-{
-    int namePosition;
-    char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
-
-
-    printf("\n\nOriginal List\n--------------");
-    printNames(names, ELEMENTS);
-
-    sortNames(names, ELEMENTS, 1);
-
-    printf("\n\nSorted list\n--------------");
-    printNames(names, ELEMENTS);
-
-    namePosition = findName(names, ELEMENTS, "Sheldon");
-    printf("\n\nSheldon is in position number: %d",namePosition+1);
-    return 0;
-}
