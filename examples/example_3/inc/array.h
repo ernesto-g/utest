@@ -22,10 +22,14 @@ struct
     char nombre[51];
     char apellido[51];
     float salario;
+    int sector;
     long int fechaIngreso;
     int isEmpty;
 }typedef empleado;
 
 int sortEmpleadoByName(empleado* pEmpleado, int length, int order);
 empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo);
-int printNames(empleado* pEmpleado, int length);
+int printEmpleados(empleado* pEmpleado, int length);
+int addEmpleado(empleado* pEmpleado, int length, int legajo, char nombre[],char apellido[],float salario,int sector, long int fechaIngreso);
+int removeEmpleado(empleado* pEmpleado, int length, int legajo);
+int initEmpleados(empleado* pEmpleado, int length);

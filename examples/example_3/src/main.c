@@ -49,23 +49,29 @@ int run(void)
     int i;
     char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
 
+    initEmpleados(arrayEmpleados, ELEMENTS);
+
     for(i=0; i < ELEMENTS; i++)
     {
         strcpy(arrayEmpleados[i].nombre, names[i]);
         arrayEmpleados[i].legajo = i*i;
+        addEmpleado(arrayEmpleados, ELEMENTS,i*i,names[i],names[i],100,1,20161101);
     }
 
+    removeEmpleado(arrayEmpleados, ELEMENTS,9);
 
     printf("\n\nOriginal List\n--------------");
-    printNames(arrayEmpleados, ELEMENTS);
+    printEmpleados(arrayEmpleados, ELEMENTS);
+
 
     sortEmpleadoByName(arrayEmpleados, ELEMENTS, 1);
 
     printf("\n\nSorted list\n--------------");
-    printNames(arrayEmpleados, ELEMENTS);
+    printEmpleados(arrayEmpleados, ELEMENTS);
 
     pEmpleado = findEmpleadoByLegajo(arrayEmpleados, ELEMENTS, 9);
-    printf("\n\nEl legajo 9: %s",pEmpleado->nombre);
+    if(pEmpleado != NULL)
+        printf("\n\nEl legajo 9: %s",pEmpleado->nombre);
     return 0;
 }
 

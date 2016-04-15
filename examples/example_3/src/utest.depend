@@ -152,7 +152,7 @@
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460679198 d:\mauriciodavila\utest\examples\example_3\inc\array.h
+1460680631 d:\mauriciodavila\utest\examples\example_3\inc\array.h
 
 1460582017 source:d:\mauriciodavila\utest\examples\example_3\testing\src\main_test.c
 	<utest.h>
@@ -171,13 +171,13 @@
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460668370 source:d:\mauriciodavila\utest\examples\example_3\src\array.c
+1460680887 source:d:\mauriciodavila\utest\examples\example_3\src\array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../inc/array.h"
 
-1460668812 source:d:\mauriciodavila\utest\examples\example_3\src\main.c
+1460680887 source:d:\mauriciodavila\utest\examples\example_3\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

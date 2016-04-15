@@ -21,10 +21,18 @@
 #include "../inc/array.h"
 
 
+/** \brief
+ *
+ * \param pEmpleado empleado*
+ * \param length int
+ * \param order int
+ * \return int
+ *
+ */
 int sortEmpleadoByName(empleado* pEmpleado, int length, int order)
 {
-    empleado auxEmpleado;
     int i,j;
+    empleado auxEmpleado;
 
     if (length < 1) // Invalid length
     {
@@ -32,8 +40,12 @@ int sortEmpleadoByName(empleado* pEmpleado, int length, int order)
     }
     for(i=0; i< length-1; i++)
     {
+        if(pEmpleado[i].isEmpty)
+            continue;
         for(j=i+1; j<length; j++)
         {
+            if(pEmpleado[j].isEmpty)
+                continue;
             if(order)
             {
                 if(strcmp(pEmpleado[i].nombre,pEmpleado[j].nombre)>0)
@@ -59,6 +71,15 @@ int sortEmpleadoByName(empleado* pEmpleado, int length, int order)
     return 0;
 }
 
+
+/** \brief
+ *
+ * \param pEmpleado empleado*
+ * \param length int
+ * \param legajo int
+ * \return empleado*
+ *
+ */
 empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo)
 {
     int i;
@@ -69,21 +90,102 @@ empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo)
     }
     for(i=0; i< length; i++)
     {
-        if(pEmpleado[i].legajo==legajo)
+        if(pEmpleado[i].legajo==legajo && !pEmpleado[i].isEmpty)
             return pEmpleado+i;
     }
     return NULL;
 }
 
-int printNames(empleado* pEmpleado, int length)
+
+/** \brief
+ *
+ * \param pEmpleado empleado*
+ * \param length int
+ * \return int
+ *
+ */
+int printEmpleados(empleado* pEmpleado, int length)
 {
     int i;
 
     for(i=0; i< length; i++)
     {
-        printf("\nLegajo: %2i - Nombre: %s",pEmpleado[i].legajo, pEmpleado[i].nombre);
+        if(!pEmpleado[i].isEmpty)
+            printf("\nLegajo: %2i - Nombre: %s",pEmpleado[i].legajo, pEmpleado[i].nombre);
     }
     return 0;
 }
 
 
+/** \brief
+ *
+ * \param pEmpleado empleado*
+ * \param length int
+ * \return int
+ *
+ */
+int initEmpleados(empleado* pEmpleado, int length)
+{
+    int i;
+
+    for(i=0; i< length; i++)
+    {
+        pEmpleado[i].isEmpty=1;
+    }
+    return 0;
+}
+
+/** \brief
+ *
+ * \param pEmpleado empleado*
+ * \param length int
+ * \param legajo int
+ * \param nombre[] char
+ * \param apellido[] char
+ * \param salario float
+ * \param sector int
+ * \param fechaIngreso long int
+ * \return int
+ *
+ */
+int addEmpleado(empleado* pEmpleado, int length, int legajo, char nombre[],char apellido[],float salario,int sector, long int fechaIngreso)
+{
+    int i;
+
+    for(i=0; i< length; i++)
+    {
+        if(pEmpleado[i].isEmpty)
+        {
+            pEmpleado[i].legajo=legajo;
+            strcpy(pEmpleado[i].nombre,nombre);
+            strcpy(pEmpleado[i].apellido,apellido);
+            pEmpleado[i].salario = salario;
+            pEmpleado[i].sector = sector;
+            pEmpleado[i].fechaIngreso = fechaIngreso;
+            pEmpleado[i].isEmpty=0;
+            return 0;
+        }
+    }
+    return -1;
+}
+
+/** \brief
+ *
+ * \param pEmpleado empleado*
+ * \param length int
+ * \param legajo int
+ * \return int
+ *
+ */
+int removeEmpleado(empleado* pEmpleado, int length, int legajo)
+{
+    int i;
+    empleado *pAuxEmpleado;
+    pAuxEmpleado=findEmpleadoByLegajo(pEmpleado, length, legajo);
+    if( pAuxEmpleado != NULL)
+    {
+        pAuxEmpleado->isEmpty=1;
+        return 0;
+    }
+    return -1;
+}
