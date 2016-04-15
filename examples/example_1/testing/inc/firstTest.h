@@ -1,6 +1,6 @@
 /*
-    utest example : Unit test library for embedded C programs.
-    Copyright (C) <2016>  <Ernesto Gigliotti>
+    utest example : Unit test examples.
+    Copyright (C) <2016>  <Mauricio Davila>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,33 +16,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "utest.h"
-#include "utest.c"
+void firstTestSetup(void);
+void firstTestCase01(void);
+void firstTestCase02(void);
+void firstTestCase03(void);
 
 
-void testSetup(void)
-{
-	utest_print("Setup...\r\n");
-}
 
-void testCase(void)
-{
-	utest_assertEqualsInt(5,5);
-}
 
-void startTesting(void)
-{
-    utest_print("starting testings...\r\n");
-
-	utest_init();
-
-	utest_startTest(testCase,testSetup,"Test Case 1");
-	//...
-
-	utest_printStatistics();
-}
-
-void main(void)
-{
-	startTesting();
-}
