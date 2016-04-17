@@ -23,16 +23,16 @@
 
 /** \brief
  *
- * \param pEmpleado empleado*
+ * \param pEmployee employee*
  * \param length int
  * \param order int
  * \return int
  *
  */
-int sortEmpleadoByName(empleado* pEmpleado, int length, int order)
+int sortEmployeeByName(employee* pEmployee, int length, int order)
 {
     int i,j;
-    empleado auxEmpleado;
+    employee auxEmployee;
 
     if (length < 1) // Invalid length
     {
@@ -40,29 +40,29 @@ int sortEmpleadoByName(empleado* pEmpleado, int length, int order)
     }
     for(i=0; i< length-1; i++)
     {
-        if(pEmpleado[i].isEmpty)
+        if(pEmployee[i].isEmpty)
             continue;
         for(j=i+1; j<length; j++)
         {
-            if(pEmpleado[j].isEmpty)
+            if(pEmployee[j].isEmpty)
                 continue;
             if(order)
             {
-                if(strcmp(pEmpleado[i].nombre,pEmpleado[j].nombre)>0)
+                if(strcmp(pEmployee[i].name,pEmployee[j].name)>0)
                 {
-                    auxEmpleado = pEmpleado[i];
-                    pEmpleado[i] = pEmpleado[j];
-                    pEmpleado[j] = auxEmpleado;
+                    auxEmployee = pEmployee[i];
+                    pEmployee[i] = pEmployee[j];
+                    pEmployee[j] = auxEmployee;
 
                 }
             }
             else
             {
-                if(strcmp(pEmpleado[i].nombre,pEmpleado[j].nombre)<0)
+                if(strcmp(pEmployee[i].name,pEmployee[j].name)<0)
                 {
-                    auxEmpleado = pEmpleado[i];
-                    pEmpleado[i] = pEmpleado[j];
-                    pEmpleado[j] = auxEmpleado;
+                    auxEmployee = pEmployee[i];
+                    pEmployee[i] = pEmployee[j];
+                    pEmployee[j] = auxEmployee;
 
                 }
             }
@@ -74,13 +74,13 @@ int sortEmpleadoByName(empleado* pEmpleado, int length, int order)
 
 /** \brief
  *
- * \param pEmpleado empleado*
+ * \param pEmployee employee*
  * \param length int
- * \param legajo int
- * \return empleado*
+ * \param id int
+ * \return employee*
  *
  */
-empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo)
+employee* findEmployeeById(employee* pEmployee, int length,int id)
 {
     int i;
 
@@ -90,28 +90,32 @@ empleado* findEmpleadoByLegajo(empleado* pEmpleado, int length, int legajo)
     }
     for(i=0; i< length; i++)
     {
-        if(pEmpleado[i].legajo==legajo && !pEmpleado[i].isEmpty)
-            return pEmpleado+i;
+        if(pEmployee[i].id==id && !pEmployee[i].isEmpty)
+        {
+            return &(pEmployee[i]);
+        }
+
     }
     return NULL;
+
 }
 
 
 /** \brief
  *
- * \param pEmpleado empleado*
+ * \param pEmployee employee*
  * \param length int
  * \return int
  *
  */
-int printEmpleados(empleado* pEmpleado, int length)
+int printEmployees(employee* pEmployee, int length)
 {
     int i;
-    printf("\nLegajo -      Nombre      -     Apellido     -  Fecha   - Salario - Sector");
+    printf("\n  Id   -       Name       -     Last Name    - Salary  - Sector");
     for(i=0; i< length; i++)
     {
-        if(!pEmpleado[i].isEmpty)
-            printf("\n%6i - %-16s - %-16s - %8ld - %4.2f - %6d",pEmpleado[i].legajo, pEmpleado[i].nombre, pEmpleado[i].apellido, pEmpleado[i].fechaIngreso, pEmpleado[i].salario, pEmpleado[i].sector );
+        if(!pEmployee[i].isEmpty)
+            printf("\n%6i - %-16s - %-16s - %4.2f - %6d",pEmployee[i].id, pEmployee[i].name, pEmployee[i].lastName, pEmployee[i].salary, pEmployee[i].sector );
     }
     return 0;
 }
@@ -119,50 +123,49 @@ int printEmpleados(empleado* pEmpleado, int length)
 
 /** \brief
  *
- * \param pEmpleado empleado*
+ * \param pEmployee employee*
  * \param length int
  * \return int
  *
  */
-int initEmpleados(empleado* pEmpleado, int length)
+int initEmployees(employee* pEmployee, int length)
 {
     int i;
 
     for(i=0; i< length; i++)
     {
-        pEmpleado[i].isEmpty=1;
+        pEmployee[i].isEmpty=1;
     }
     return 0;
 }
 
 /** \brief
  *
- * \param pEmpleado empleado*
+ * \param pEmployee employee*
  * \param length int
- * \param legajo int
- * \param nombre[] char
- * \param apellido[] char
- * \param salario float
+ * \param id int
+ * \param name[] char
+ * \param lastName[] char
+ * \param salary float
  * \param sector int
- * \param fechaIngreso long int
+ * \param startDate long int
  * \return int
  *
  */
-int addEmpleado(empleado* pEmpleado, int length, int legajo, char nombre[],char apellido[],float salario,int sector, long int fechaIngreso)
+int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
 {
     int i;
 
     for(i=0; i< length; i++)
     {
-        if(pEmpleado[i].isEmpty)
+        if(pEmployee[i].isEmpty)
         {
-            pEmpleado[i].legajo=legajo;
-            strcpy(pEmpleado[i].nombre,nombre);
-            strcpy(pEmpleado[i].apellido,apellido);
-            pEmpleado[i].salario = salario;
-            pEmpleado[i].sector = sector;
-            pEmpleado[i].fechaIngreso = fechaIngreso;
-            pEmpleado[i].isEmpty=0;
+            pEmployee[i].id=id;
+            strcpy(pEmployee[i].name,name);
+            strcpy(pEmployee[i].lastName,lastName);
+            pEmployee[i].salary = salary;
+            pEmployee[i].sector = sector;
+            pEmployee[i].isEmpty=0;
             return 0;
         }
     }
@@ -171,20 +174,21 @@ int addEmpleado(empleado* pEmpleado, int length, int legajo, char nombre[],char 
 
 /** \brief
  *
- * \param pEmpleado empleado*
+ * \param pEmployee employee*
  * \param length int
- * \param legajo int
+ * \param id int
  * \return int
  *
  */
-int removeEmpleado(empleado* pEmpleado, int length, int legajo)
+int removeEmployee(employee* pEmployee, int length, int id)
 {
-    int i;
-    empleado *pAuxEmpleado;
-    pAuxEmpleado=findEmpleadoByLegajo(pEmpleado, length, legajo);
-    if( pAuxEmpleado != NULL)
+
+    employee *pAuxEmployee = NULL;
+
+    pAuxEmployee = findEmployeeById(pEmployee, length,id);
+    if( pAuxEmployee != NULL)
     {
-        pAuxEmpleado->isEmpty=1;
+        pAuxEmployee->isEmpty=1;
         return 0;
     }
     return -1;

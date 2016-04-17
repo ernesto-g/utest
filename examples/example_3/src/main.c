@@ -44,37 +44,39 @@ int main(void)
 
 int run(void)
 {
-    empleado arrayEmpleados[ELEMENTS];
-    empleado* pEmpleado;
+    employee arrayEmployees[ELEMENTS];
+    employee* pEmployee;
     int i;
     char* names[] = {"Sheldon","Penny","Howard","Raj","Leonard"};
-    char* apellidos[] = {"Cooper","Penny","Wolowitz","Koothrappali","Hofstadter"};
+    char* lastNames[] = {"Cooper","Penny","Wolowitz","Koothrappali","Hofstadter"};
     int sector[] = {1,1,2,3,4};
-    char* fecha[] = {20160101,20160101,20160111,20150101,20160117};
-    float salario[] = {1000,1000,2000,3000,4000};
-    int legajo[] = {11,20,3,4,9};
+    float salary[] = {1000,1000,2000,3000,4000};
+    int id[] = {11,20,3,4,9};
 
-    initEmpleados(arrayEmpleados, ELEMENTS);
+    initEmployees(arrayEmployees, ELEMENTS);
 
     for(i=0; i < ELEMENTS; i++)
     {
-        addEmpleado(arrayEmpleados, ELEMENTS,legajo[i],names[i],apellidos[i],salario[i],sector[i],fecha[i]);
+        addEmployee(arrayEmployees, ELEMENTS,id[i],names[i],lastNames[i],salary[i],sector[i]);
     }
 
-    removeEmpleado(arrayEmpleados, ELEMENTS,9);
-
     printf("\n\nOriginal List\n--------------");
-    printEmpleados(arrayEmpleados, ELEMENTS);
+    printEmployees(arrayEmployees, ELEMENTS);
 
+    removeEmployee(arrayEmployees, ELEMENTS,20);
 
-    sortEmpleadoByName(arrayEmpleados, ELEMENTS, 1);
+    sortEmployeeByName(arrayEmployees, ELEMENTS, 1);
 
     printf("\n\nSorted list\n--------------");
-    printEmpleados(arrayEmpleados, ELEMENTS);
+    printEmployees(arrayEmployees, ELEMENTS);
 
-    pEmpleado = findEmpleadoByLegajo(arrayEmpleados, ELEMENTS, 9);
-    if(pEmpleado != NULL)
-        printf("\n\nEl legajo 9: %s",pEmpleado->nombre);
+
+    pEmployee = findEmployeeById(arrayEmployees, ELEMENTS,9);
+
+    if(pEmployee != NULL)
+        printf("\n\nId 9 is: %s",pEmployee->name);
+
+
     return 0;
 }
 
