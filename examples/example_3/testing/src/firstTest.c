@@ -26,60 +26,43 @@
 //DEFINES OF THIS TEST
 #define LENGTH 6
 
+
 static char* unsortedList[] = {"Za","Zb","Xd","Xb","Ya","Yc"};
-static char* sortedListUp[] = {"Xb","Xd","Ya","Yc","Za","Zb"};
-static char* sortedListDown[] = {"Zb","Za","Yc","Ya","Xd","Xb"};
+static int sector[] = {1,1,2,3,4,6};
+static float salary[] = {1000,1000,2000,3000,4000,8000};
+static int id[] = {11,20,3,4,9,99};
+
+static employee arrayEmployees[LENGTH];
 
 void firstTestSetup(void)
 {
 	utest_print("Setup...\r\n");
+
 }
 
 void firstTestCase01(void)
 {
     int i;
-    //sortNames(unsortedList, LENGTH, 1); // Thirth parameter at 1 indicate UP order
+    initEmployees(arrayEmployees, LENGTH);
     for (i=0;i < LENGTH;i++)
     {
-        utest_assertEqualsStringMsg(sortedListUp[i],unsortedList[i],2,"Error in UP order ");
+        utest_assertEqualsIntMsg(arrayEmployees[i].isEmpty,1,"Error value in <.isEmpty> the correct value is: (1)");
     }
 
 }
-
 void firstTestCase02(void)
 {
     int i;
-   // sortNames(unsortedList, LENGTH, 0); // Thirth parameter at 1 indicate UP order
-    for (i=0;i < LENGTH;i++)
-    {
-        utest_assertEqualsStringMsg(sortedListDown[i],unsortedList[i],2,"Error in DOWN order ");
-    }
-
+    i = initEmployees(arrayEmployees, 0);
+    utest_assertEqualsIntMsg(-1,i, "Error in return value <initEmployees> if ok the correct value to return is: (-1)");
 
 }
 
 void firstTestCase03(void)
 {
     int i;
-
-    //i = sortNames(unsortedList, -1, 0); // Thirth parameter at 1 indicate UP order
-    utest_assertEqualsIntMsg(-1,i, "Error with [-1] like length parameter");
-
-}
-
-void firstTestCase04(void)
-{
-    int i;
-
-    //i = sortNames(unsortedList, 0, 0); // Thirth parameter at 1 indicate UP order
-    utest_assertEqualsIntMsg(-1,i, "Error with [0] like length parameter");
+    i = initEmployees(NULL, LENGTH);
+    utest_assertEqualsIntMsg(-1,i, "Error in return value <initEmployees> correct value to return is: (-1)");
 
 }
 
-void firstTestCase05(void)
-{
-    int i;
-
-   // i = sortNames(unsortedList, 1, 0); // Thirth parameter at 1 indicate UP order
-    utest_assertEqualsIntMsg(0,i, "Error correct length parameter");
-}

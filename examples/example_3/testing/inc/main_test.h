@@ -1,1 +1,1 @@
-void startTesting(void);
+void startTesting(int testGroup);

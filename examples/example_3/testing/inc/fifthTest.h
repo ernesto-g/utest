@@ -16,20 +16,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-struct
-{
-    int id;
-    char name[51];
-    char lastName[51];
-    float salary;
-    int sector;
-    int isEmpty;
+void fifthTestSetup(void);
+void fifthTestCase01(void);
+void fifthTestCase02(void);
+void fifthTestCase03(void);
+void fifthTestCase04(void);
+void fifthTestCase05(void);
 
-}typedef employee;
-
-int sortEmployeeByName(employee* pEmployee, int length, int order);
-employee* findEmployeeById(employee* pEmployee, int length,int id);
-int printEmployees(employee* pEmployee, int length);
-int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector);
-int removeEmployee(employee* pEmployee, int length, int id);
-int initEmployees(employee* pEmployee, int length);

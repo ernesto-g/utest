@@ -20,5 +20,6 @@ void secondTestSetup(void);
 void secondTestCase01(void);
 void secondTestCase02(void);
 void secondTestCase03(void);
-
+void secondTestCase04(void);
+void secondTestCase05(void);
 

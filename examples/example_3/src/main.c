@@ -22,17 +22,22 @@
 #include <string.h>
 #include "../inc/array.h"
 #define ELEMENTS 5
-/*
+
 #include "../testing/inc/main_test.h"
 #define TEST
-*/
+
 int run(void);
 
 int main(void)
 {
 
     #ifdef TEST
-        startTesting();
+        //startTesting(1);
+        //startTesting(2);
+        //startTesting(3);
+        //startTesting(4);
+        startTesting(5);
+
     #else
         run();
     #endif

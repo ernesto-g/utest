@@ -20,13 +20,128 @@
 #include <string.h>
 #include "../inc/array.h"
 
+/** \brief  To indicate that all position in the array are empty,
+ *          this function put the flag (isEmpty) in TRUE in all
+ *          position of the array
+ * \param pEmployee employee* Pointer to array of employees
+ * \param length int Array length
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
+ */
+int initEmployees(employee* pEmployee, int length)
+{
+    int i;
+    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    {
+        return -1;
+    }
+    for(i=0; i< length; i++)
+    {
+        pEmployee[i].isEmpty=1;
+    }
+    return 0;
+}
 
-/** \brief
+
+/** \brief add in a existing list of employees the values recived as parameters
  *
  * \param pEmployee employee*
  * \param length int
- * \param order int
- * \return int
+ * \param id int
+ * \param name[] char
+ * \param lastName[] char
+ * \param salary float
+ * \param sector int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
+ *
+ */
+int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
+{
+    int i;
+    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    {
+        return -1;
+    }
+    for(i=0; i< length; i++)
+    {
+        if(pEmployee[i].isEmpty)
+        {
+            pEmployee[i].id=id;
+            strcpy(pEmployee[i].name,name);
+            strcpy(pEmployee[i].lastName,lastName);
+            pEmployee[i].salary = salary;
+            pEmployee[i].sector = sector;
+            pEmployee[i].isEmpty = 0;
+            return 0;
+        }
+    }
+    return -1;
+}
+
+
+/** \brief find a Employee by Id
+ *
+ * \param pEmployee employee*
+ * \param length int
+ * \param id int
+ * \return employee* Return a (Employee pointer) if ok or (NULL pointer) if [Invalid length or NULL pointer recived or employeed not found]
+ *
+ */
+employee* findEmployeeById(employee* pEmployee, int length,int id)
+{
+    int i;
+
+    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    {
+        return NULL;
+    }
+    for(i=0; i< length; i++)
+    {
+        if(pEmployee[i].id==id && !pEmployee[i].isEmpty)
+        {
+            return &(pEmployee[i]);
+        }
+
+    }
+    return NULL;
+
+}
+
+/** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+ *
+ * \param pEmployee employee*
+ * \param length int
+ * \param id int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok
+ *
+ */
+int removeEmployee(employee* pEmployee, int length, int id)
+{
+
+    employee *pAuxEmployee = NULL;
+
+    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    {
+        return -1;
+    }
+
+    pAuxEmployee = findEmployeeById(pEmployee, length,id);
+    if( pAuxEmployee != NULL)
+    {
+        pAuxEmployee->isEmpty=1;
+        return 0;
+    }
+    return -1;
+}
+
+
+
+/** \brief Sort the elements in the array of employees by Name, the argument order indicate UP or DOWN order
+ *
+ * \param pEmployee employee*
+ * \param length int
+ * \param order int  [1] indicate UP - [0] indicate DOWN
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok
  *
  */
 int sortEmployeeByName(employee* pEmployee, int length, int order)
@@ -34,18 +149,21 @@ int sortEmployeeByName(employee* pEmployee, int length, int order)
     int i,j;
     employee auxEmployee;
 
-    if (length < 1) // Invalid length
+    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
     {
         return -1;
     }
+
     for(i=0; i< length-1; i++)
     {
         if(pEmployee[i].isEmpty)
             continue;
+
         for(j=i+1; j<length; j++)
         {
             if(pEmployee[j].isEmpty)
                 continue;
+
             if(order)
             {
                 if(strcmp(pEmployee[i].name,pEmployee[j].name)>0)
@@ -72,34 +190,6 @@ int sortEmployeeByName(employee* pEmployee, int length, int order)
 }
 
 
-/** \brief
- *
- * \param pEmployee employee*
- * \param length int
- * \param id int
- * \return employee*
- *
- */
-employee* findEmployeeById(employee* pEmployee, int length,int id)
-{
-    int i;
-
-    if (length < 1) // Invalid length
-    {
-        return NULL;
-    }
-    for(i=0; i< length; i++)
-    {
-        if(pEmployee[i].id==id && !pEmployee[i].isEmpty)
-        {
-            return &(pEmployee[i]);
-        }
-
-    }
-    return NULL;
-
-}
-
 
 /** \brief
  *
@@ -121,75 +211,7 @@ int printEmployees(employee* pEmployee, int length)
 }
 
 
-/** \brief
- *
- * \param pEmployee employee*
- * \param length int
- * \return int
- *
- */
-int initEmployees(employee* pEmployee, int length)
-{
-    int i;
 
-    for(i=0; i< length; i++)
-    {
-        pEmployee[i].isEmpty=1;
-    }
-    return 0;
-}
 
-/** \brief
- *
- * \param pEmployee employee*
- * \param length int
- * \param id int
- * \param name[] char
- * \param lastName[] char
- * \param salary float
- * \param sector int
- * \param startDate long int
- * \return int
- *
- */
-int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
-{
-    int i;
 
-    for(i=0; i< length; i++)
-    {
-        if(pEmployee[i].isEmpty)
-        {
-            pEmployee[i].id=id;
-            strcpy(pEmployee[i].name,name);
-            strcpy(pEmployee[i].lastName,lastName);
-            pEmployee[i].salary = salary;
-            pEmployee[i].sector = sector;
-            pEmployee[i].isEmpty=0;
-            return 0;
-        }
-    }
-    return -1;
-}
 
-/** \brief
- *
- * \param pEmployee employee*
- * \param length int
- * \param id int
- * \return int
- *
- */
-int removeEmployee(employee* pEmployee, int length, int id)
-{
-
-    employee *pAuxEmployee = NULL;
-
-    pAuxEmployee = findEmployeeById(pEmployee, length,id);
-    if( pAuxEmployee != NULL)
-    {
-        pAuxEmployee->isEmpty=1;
-        return 0;
-    }
-    return -1;
-}

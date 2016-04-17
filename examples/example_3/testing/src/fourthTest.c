@@ -34,70 +34,59 @@ static int id[] = {11,20,3,4,9,99};
 
 static employee arrayEmployees[LENGTH];
 
-void secondTestSetup(void)
+void fourthTestSetup(void)
 {
+    int i;
 	utest_print("Setup...\r\n");
     initEmployees(arrayEmployees, LENGTH);
-
-}
-
-void secondTestCase01(void)
-{
-    int i,r;
-
     for(i=0; i < LENGTH; i++)
     {
-        r = addEmployee(arrayEmployees, LENGTH,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
-        utest_assertEqualsIntMsg(r,0,"Error in return value <addEmployees> if ok the correct value to return is: (0)");
+        addEmployee(arrayEmployees, LENGTH,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
     }
+
 }
 
-void secondTestCase02(void)
+void fourthTestCase01(void)
+{
+    int i,r;
+    i = 2;
+    r = removeEmployee(arrayEmployees, LENGTH, id[i]);
+    utest_assertEqualsIntMsg(r,0,"Error in return value <removeEmployees> if ok the correct value to return is: (0)");
+}
+
+void fourthTestCase02(void)
 {
     int i,r;
     for(i=0; i < LENGTH; i++)
     {
-        r = addEmployee(arrayEmployees, LENGTH,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
-        utest_assertEqualsIntMsg(r,0,"Error in return value <addEmployees> correct value to return is: (0)");
+        r = removeEmployee(arrayEmployees, LENGTH, id[i]);
+        utest_assertEqualsIntMsg(r,0,"Error in return value <removeEmployees> correct value to return is: (0)");
     }
     for (i=0;i < LENGTH;i++)
     {
+        utest_assertEqualsIntMsg(arrayEmployees[i].isEmpty,1,"Error value in <.isEmpty> if is removed the correct value is: (1)");
         utest_assertEqualsIntMsg(arrayEmployees[i].id,id[i],"Error value in <.id>");
         utest_assertEqualsStringMsg(arrayEmployees[i].name,unsortedList[i],2,"Error value in <.name>");
         utest_assertEqualsStringMsg(arrayEmployees[i].lastName,unsortedList[i],2,"Error value in <.lastName>");
         utest_assertEqualsFloatMsg(arrayEmployees[i].salary,salary[i],"Error value in <.salary>");
         utest_assertEqualsIntMsg(arrayEmployees[i].sector,sector[i],"Error value in <.sector>");
-        utest_assertEqualsIntMsg(arrayEmployees[i].isEmpty,0,"Error value in <.isEmpty> the correct value is: (0)");
     }
 }
 
-void secondTestCase03(void)
+void fourthTestCase03(void)
 {
     int i,r;
     i = 0;
-    for(i=0; i < LENGTH; i++)
-    {
-        r = addEmployee(arrayEmployees, LENGTH,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
-        utest_assertEqualsIntMsg(r,0,"Error in return value <addEmployees> if everythig is ok, correct value to return is: (0)");
-    }
-    r = addEmployee(arrayEmployees, LENGTH,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
-    utest_assertEqualsIntMsg(r,-1,"Error in return value <addEmployees> if array is full, the correct value to return is: (-1)");
+    r = removeEmployee(NULL, LENGTH, id[i]);
+    utest_assertEqualsIntMsg(r,-1,"Error in return value <removeEmployees> if array pointer is NULL, the correct value to return is: (-1)");
 }
 
-void secondTestCase04(void)
+void fourthTestCase04(void)
 {
     int i,r;
     i = 0;
-    r = addEmployee(NULL, LENGTH,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
-    utest_assertEqualsIntMsg(r,-1,"Error in return value <addEmployees> if array pointer is NULL, the correct value to return is: (-1)");
-}
-
-void secondTestCase05(void)
-{
-    int i,r;
-    i = 0;
-    r = addEmployee(arrayEmployees, 0,id[i],unsortedList[i],unsortedList[i],salary[i],sector[i]);
-    utest_assertEqualsIntMsg(r,-1,"Error in return value <addEmployees> if LENGTH of array is invalid, the correct value to return is: (-1)");
+    r = removeEmployee(arrayEmployees, 0, id[i]);
+    utest_assertEqualsIntMsg(r,-1,"Error in return value <removeEmployees> if LENGTH of array is invalid, the correct value to return is: (-1)");
 }
 
 

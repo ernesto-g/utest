@@ -193,43 +193,70 @@
 
 1460902373 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/utest.h
 
-1460902373 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/firstTest.c
+1460932220 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/firstTest.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460906099 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/inc/array.h
+1460921728 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/inc/array.h
 
-1460902373 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/main_test.c
+1460932793 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/main_test.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
 	"../inc/firstTest.h"
 	"../inc/secondTest.h"
+	"../inc/thirdTest.h"
+	"../inc/fourthTest.h"
+	"../inc/fifthTest.h"
 
 1460902373 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/firstTest.h
 
-1460902373 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/secondTest.h
+1460921293 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/secondTest.h
 
-1460902373 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/secondTest.c
+1460932195 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/secondTest.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460906082 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/src/array.c
+1460932893 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/src/array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../inc/array.h"
 
-1460905254 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/src/main.c
+1460932162 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/src/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../inc/array.h"
 	"../testing/inc/main_test.h"
 
-1460902373 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/main_test.h
+1460918575 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/main_test.h
+
+1460933741 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/fifthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../../inc/array.h"
+
+1460932208 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/fourthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../../inc/array.h"
+
+1460932181 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/thirdTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../../inc/array.h"
+
+1460922487 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/thirdTest.h
+
+1460922536 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/fourthTest.h
+
+1460922445 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/fifthTest.h
 
