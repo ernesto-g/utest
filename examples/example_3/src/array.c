@@ -33,7 +33,7 @@ int initEmployees(employee* pEmployee, int length)
     int i;
     if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
     {
-        return -21;
+        return -1;
     }
     for(i=0; i< length; i++)
     {

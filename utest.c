@@ -42,10 +42,10 @@ void utest_printStatistics(void)
 	{
 		int per = (int)(((float)utest_okTestsCounter/(float)utest_totalTestsCounter)*100.0);
 		utest_print1("Tests OK : %d Percent.\r\n",per);
-		utest_print2("Total Tests: \x1B[32m%d\x1B[0m\r\nFailed Tests: \x1B[31m%d\x1B[0m\r\n",utest_totalTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter));
+		utest_print2("Total Tests: %d\r\nFailed Tests: %d\r\n",utest_totalTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter));
 	}
 	else
-		utest_print("\x1B[31mNo tests executed.\x1B[0m\r\n");
+		utest_print("No tests executed.\r\n");
 
 }
 
@@ -77,37 +77,37 @@ void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
 void utest_printStartTestingC(char* testName)
 {
 
-    utest_print("\r\n\r\n\x1B[34m********************************************************************\x1B[0m\r\n");
-	utest_print1("\x1B[34m***********    Start Testing of: \x1B[36m%20s\x1B[34m   ************\x1B[0m\r\n",testName);
-    utest_print("\x1B[34m********************************************************************\x1B[0m\r\n");
+    utest_print("\r\n\r\n********************************************************************\r\n");
+	utest_print1("***********    Start Testing of: %20s   ************\r\n",testName);
+    utest_print("********************************************************************\r\n");
 
 }
 void utest_printStatisticsC(char* testName)
 {
 
-    utest_print("\x1B[34m********************************************************************\x1B[0m\r\n");
-	utest_print1("\x1B[34m*******   Unit Tests Statistics: \x1B[36m%20s\x1B[34m   ************\x1B[0m\r\n",testName);
-    utest_print("\x1B[34m********************************************************************\x1B[0m\r\n");
+    utest_print("********************************************************************\r\n");
+	utest_print1("*******   Unit Tests Statistics: %20s   ************\r\n",testName);
+    utest_print("********************************************************************\r\n");
 
 	if(utest_totalTestsCounter>0)
 	{
 		int per = (int)(((float)utest_okTestsCounter/(float)utest_totalTestsCounter)*100.0);
-        utest_print("\x1B[34m**| Total Test  |  Succed Test  |  Failed Test  |  Effectiveness |**\x1B[0m\r\n");
-       utest_print4("\x1B[34m**|    %3d      |      \x1B[32m%3d\x1B[34m      |      \x1B[31m%3d\x1B[34m      |     %3d perc.  |**\x1B[0m\r\n",utest_totalTestsCounter,utest_okTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter),per);
+        utest_print("**| Total Test  |  Succed Test  |  Failed Test  |  Effectiveness |**\r\n");
+       utest_print4("**|    %3d      |      %3d      |      %3d      |     %3d perc.  |**\r\n",utest_totalTestsCounter,utest_okTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter),per);
 	}
 	else
-		utest_print("\x1B[31mNo tests executed.\x1B[0m\r\n");
+		utest_print("No tests executed.\r\n");
 
-    utest_print("\x1B[34m********************************************************************\x1B[0m\r\n\r\n");
+    utest_print("********************************************************************\r\n\r\n");
 }
 
 void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
 {
 	if(fncTest!=0)
 	{
-	    utest_print("\x1B[30m--------------------------------------------------------------------\x1B[0m\r\n");
+	    utest_print("--------------------------------------------------------------------\r\n");
 		utest_flagTestError=0;
-		utest_print1("\x1B[34m%40s\x1B[0m\r\n",testName);
+		utest_print1("%-40s\r\n",testName);
 
 		if(fncBefore!=0)
 			fncBefore();
@@ -115,11 +115,11 @@ void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName
 		fncTest();
 		if(utest_flagTestError==1)
 		{
-			utest_print2("\x1B[31mTEST FAILED\x1B[0m\r\nFILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
+			utest_print2("TEST FAILED\r\nFILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
 		}
 		else
 		{
-			utest_print("\x1B[32mTEST OK\x1B[0m\r\n");
+			utest_print("TEST OK\r\n");
 			utest_okTestsCounter++;
 		}
 

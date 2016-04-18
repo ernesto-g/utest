@@ -28,10 +28,9 @@
 #define LENGTH 6
 
 
-static char* unsortedList[] = {"Za","Zb","Xd","Xb","Ya","Yc"};
-static int sector[] = {1,1,2,3,4,6};
-static float salary[] = {1000,1000,2000,3000,4000,8000};
-static int id[] = {11,20,3,4,9,99};
+
+
+
 
 static employee arrayEmployees[LENGTH];
 

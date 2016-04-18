@@ -48,7 +48,7 @@ void thirdTestSetup(void)
 
 void thirdTestCase01(void)
 {
-    int i,r;
+    int i;
     employee* pEmployee;
     i = 4;
 
@@ -60,7 +60,7 @@ void thirdTestCase01(void)
 
 void thirdTestCase02(void)
 {
-    int i,r;
+    int i;
     employee* pEmployee;
     i = 4;
 

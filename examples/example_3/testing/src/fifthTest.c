@@ -50,7 +50,7 @@ void fifthTestSetup(void)
 
 void fifthTestCase01(void)
 {
-    int i,r;
+    int r;
     r = sortEmployeeByName(arrayEmployees, LENGTH, 1);
     utest_assertEqualsIntMsg(r,0,"Error in return value <sortEmployeeByName> if ok the correct value to return is: (0)");
 
@@ -58,8 +58,8 @@ void fifthTestCase01(void)
 
 void fifthTestCase02(void)
 {
-    int i,r;
-    r = sortEmployeeByName(arrayEmployees, LENGTH, 1);
+    int i;
+    sortEmployeeByName(arrayEmployees, LENGTH, 1);
     for (i=0;i < LENGTH;i++)
     {
         utest_assertEqualsStringMsg(arrayEmployees[i].name,sortedListUp[i],2,"Error value in <.name>");
@@ -68,8 +68,8 @@ void fifthTestCase02(void)
 
 void fifthTestCase03(void)
 {
-    int i,r;
-    r = sortEmployeeByName(arrayEmployees, LENGTH, 0);
+    int i;
+    sortEmployeeByName(arrayEmployees, LENGTH, 0);
     for (i=0;i < LENGTH;i++)
     {
         utest_assertEqualsStringMsg(arrayEmployees[i].name,sortedListDown[i],2,"Error value in <.name>");
@@ -79,16 +79,16 @@ void fifthTestCase03(void)
 
 void fifthTestCase04(void)
 {
-    int i,r;
-    i = 0;
+    int r;
+
     r = sortEmployeeByName(NULL, LENGTH, 0);
     utest_assertEqualsIntMsg(r,-1,"Error in return value <sortEmployeeByName> if array pointer is NULL, the correct value to return is: (-1)");
 }
 
 void fifthTestCase05(void)
 {
-    int i,r;
-    i = 0;
+    int r;
+
     r = sortEmployeeByName(arrayEmployees, 0, 0);
     utest_assertEqualsIntMsg(r,-1,"Error in return value <sortEmployeeByName> if LENGTH of array is invalid, the correct value to return is: (-1)");
 }

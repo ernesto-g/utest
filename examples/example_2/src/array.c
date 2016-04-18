@@ -34,7 +34,7 @@ int sortNames(char** pName, int length,int order)
         {
             if(order)
             {
-                if(strcmp(pName[i],pName[j])>0)
+                if(strcmp(pName[i],pName[j])<0)
                 {
                     auxName = pName[i];
                     pName[i] = pName[j];
