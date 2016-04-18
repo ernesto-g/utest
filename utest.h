@@ -24,6 +24,8 @@
 #define utest_print(MSG)     printf(MSG)
 #define utest_print1(MSG,VAR1)   { sprintf(utest_printBuffer,MSG,VAR1); printf(utest_printBuffer);}
 #define utest_print2(MSG,VAR1,VAR2)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2); printf(utest_printBuffer);}
+#define utest_print3(MSG,VAR1,VAR2,VAR3)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3); printf(utest_printBuffer);}
+#define utest_print4(MSG,VAR1,VAR2,VAR3,VAR4)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3,VAR4); printf(utest_printBuffer);}
 //________________________________________________
 
 #define utest_assertEqualsInt(A,B){ if(A!=B){ utest_print2("assert equals failed '%d' != '%d'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
@@ -84,11 +86,14 @@ extern int utest_totalTestsCounter;
 extern int utest_okTestsCounter;
 extern int utest_varAux;
 
-void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
-
 void utest_init(void);
 
 void utest_printStatistics(void);
+void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
+
+void utest_printStatisticsC(char* testName);
+void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
+void utest_printStartTestingC(char* testName);
 
 #endif
 

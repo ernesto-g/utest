@@ -34,62 +34,63 @@ void startTesting(int testGroup)
     {
         case 1:
             // Start Group 01
-            utest_print("\nStarting testings of initEmployees()...\r\n\n");
+            utest_printStartTestingC("initEmployees()");
             utest_init();
-            utest_startTest(firstTestCase01,firstTestSetup," Case[Return of Array Init]");
-            utest_startTest(firstTestCase02,firstTestSetup," Case[Return of init Employees array with NULL pointer to array]");
-            utest_startTest(firstTestCase03,firstTestSetup," Case[Return of init Employees array with invalid array length]");
-            utest_printStatistics();
+            utest_startTestC(firstTestCase01,firstTestSetup,">Case[Return of Array Init]");
+            utest_startTestC(firstTestCase02,firstTestSetup,">Case[Return of init Employees array with NULL pointer to array]");
+            utest_startTestC(firstTestCase03,firstTestSetup,">Case[Return of init Employees array with invalid array length]");
+            utest_printStatisticsC("initEmployees()");
             // End Group 01
             break;
 
         case 2:
             // Start Group 02
-            utest_print("\nStarting testings of addEmployees()...\r\n\n");
+            utest_printStartTestingC("addEmployees()");
             utest_init();
-            utest_startTest(secondTestCase01,secondTestSetup," Case[Return of add Employees]");
-            utest_startTest(secondTestCase02,secondTestSetup," Case[Content of added Employees]");
-            utest_startTest(secondTestCase03,secondTestSetup," Case[Return of add Employees without space empty]");
-            utest_startTest(secondTestCase04,secondTestSetup," Case[Return of add Employees with NULL pointer to array]");
-            utest_startTest(secondTestCase05,secondTestSetup," Case[Return of add Employees with invalid array length]");
-            utest_printStatistics();
+            utest_startTestC(secondTestCase01,secondTestSetup,">Case[Return of add Employees]");
+            utest_startTestC(secondTestCase02,secondTestSetup,">Case[Content of added Employees]");
+            utest_startTestC(secondTestCase03,secondTestSetup,">Case[Return of add Employees without space empty]");
+            utest_startTestC(secondTestCase04,secondTestSetup,">Case[Return of add Employees with NULL pointer to array]");
+            utest_startTestC(secondTestCase05,secondTestSetup,">Case[Return of add Employees with invalid array length]");
+            utest_printStatisticsC("addEmployees()");
             // End Group 02
             break;
 
         case 3:
             // Start Group 03
-            utest_print("\nStarting testings of findEmployeeById()...\r\n\n");
+            utest_printStartTestingC("findEmployeeById()");
             utest_init();
-            utest_startTest(thirdTestCase01,thirdTestSetup," Case[Return when found a Employee]");
-            utest_startTest(thirdTestCase02,thirdTestSetup," Case[Content of founded Employee]");
-            utest_startTest(thirdTestCase03,thirdTestSetup," Case[Return of find Employee with NULL pointer to array]");
-            utest_startTest(thirdTestCase04,thirdTestSetup," Case[Return of find Employee with invalid array length]");
-            utest_printStatistics();
+            utest_startTestC(thirdTestCase01,thirdTestSetup,">Case[Return when found a Employee]");
+            utest_startTestC(thirdTestCase02,thirdTestSetup,">Case[Content of founded Employee]");
+            utest_startTestC(thirdTestCase03,thirdTestSetup,">Case[Return of find Employee with NULL pointer to array]");
+            utest_startTestC(thirdTestCase04,thirdTestSetup,">Case[Return of find Employee with invalid array length]");
+            utest_printStatisticsC("findEmployeeById()");
             // End Group 03
             break;
 
         case 4:
             // Start Group 04
-            utest_print("\nStarting testings of findEmployeeById()...\r\n\n");
+            utest_printStartTestingC("removeEmployeeById()");
             utest_init();
-            utest_startTest(fourthTestCase01,fourthTestSetup," Case[Return when remove a Employee]");
-            utest_startTest(fourthTestCase02,fourthTestSetup," Case[Content of removed Employee]");
-            utest_startTest(fourthTestCase03,fourthTestSetup," Case[Return of remove Employee with NULL pointer to array]");
-            utest_startTest(fourthTestCase04,fourthTestSetup," Case[Return of remove Employee with invalid array length]");
-            utest_printStatistics();
+            utest_startTestC(fourthTestCase01,fourthTestSetup,">Case[Return when remove a Employee]");
+            utest_startTestC(fourthTestCase02,fourthTestSetup,">Case[Content of removed Employee]");
+            utest_startTestC(fourthTestCase03,fourthTestSetup,">Case[Return of remove Employee with NULL pointer to array]");
+            utest_startTestC(fourthTestCase04,fourthTestSetup,">Case[Return of remove Employee with invalid array length]");
+            utest_printStatisticsC("removeEmployeeById()");
             // End Group 04
             break;
 
         case 5:
             // Start Group 05
-            utest_print("\nStarting testings of sortEmployeeByName()...\r\n\n");
+            utest_printStartTestingC("sortEmployeeByName()");
             utest_init();
-            utest_startTest(fifthTestCase01,fifthTestSetup," Case[Return when sort a Employees array]");
-            utest_startTest(fifthTestCase02,fifthTestSetup," Case[Content of sorted a Employees array UP]");
-            utest_startTest(fifthTestCase02,fifthTestSetup," Case[Content of sorted a Employees array DOWN]");
-            utest_startTest(fifthTestCase03,fifthTestSetup," Case[Return of sorted a Employees array with NULL pointer to array]");
-            utest_startTest(fifthTestCase04,fifthTestSetup," Case[Return of sorted a Employees array with invalid array length]");
-            utest_printStatistics();
+            utest_startTestC(fifthTestCase01,fifthTestSetup,">Case[Return when sort a Employees array]");
+            utest_startTestC(fifthTestCase02,fifthTestSetup,">Case[Content of sorted a Employees array UP]");
+            utest_startTestC(fifthTestCase02,fifthTestSetup,">Case[Content of sorted a Employees array DOWN]");
+            utest_startTestC(fifthTestCase03,fifthTestSetup,">Case[Return of sorted a Employees array with NULL pointer to array]");
+            utest_startTestC(fifthTestCase04,fifthTestSetup,">Case[Return of sorted a Employees array with invalid array length]");
+
+            utest_printStatisticsC("sortEmployeeByName()");
             // End Group 05
             break;
 
