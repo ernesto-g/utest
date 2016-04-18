@@ -107,7 +107,7 @@ void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName
 	{
 	    utest_print("\x1B[30m--------------------------------------------------------------------\x1B[0m\r\n");
 		utest_flagTestError=0;
-		utest_print1("\x1B[34m%40-s\x1B[0m\r\n",testName);
+		utest_print1("\x1B[34m%40s\x1B[0m\r\n",testName);
 
 		if(fncBefore!=0)
 			fncBefore();

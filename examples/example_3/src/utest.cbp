@@ -32,17 +32,24 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../../utest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../utest.h" />
 		<Unit filename="../inc/array.h" />
-		<Unit filename="array.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="../testing/inc/fifthTest.h" />
 		<Unit filename="../testing/inc/firstTest.h" />
+		<Unit filename="../testing/inc/fourthTest.h" />
 		<Unit filename="../testing/inc/main_test.h" />
 		<Unit filename="../testing/inc/secondTest.h" />
+		<Unit filename="../testing/inc/thirdTest.h" />
+		<Unit filename="../testing/src/fifthTest.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../testing/src/firstTest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../testing/src/fourthTest.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../testing/src/main_test.c">
@@ -51,13 +58,19 @@
 		<Unit filename="../testing/src/secondTest.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../utest.c">
+		<Unit filename="../testing/src/thirdTest.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../utest.h" />
+		<Unit filename="array.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

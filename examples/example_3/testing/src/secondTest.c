@@ -19,6 +19,8 @@
 #include <utest.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 //INCLUDE LIBRARY TO TEST
 #include "../../inc/array.h"

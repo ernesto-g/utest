@@ -260,3 +260,59 @@
 
 1460922445 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/inc/fifthTest.h
 
+1460982202 source:k:\utest\utest.c
+	"utest.h"
+	<stdio.h>
+	<stdlib.h>
+
+1460982202 k:\utest\utest.h
+
+1460982202 source:k:\utest\examples\example_3\testing\src\firsttest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../../inc/array.h"
+
+1460982202 k:\utest\examples\example_3\inc\array.h
+
+1460982202 source:k:\utest\examples\example_3\testing\src\main_test.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../inc/firstTest.h"
+	"../inc/secondTest.h"
+	"../inc/thirdTest.h"
+	"../inc/fourthTest.h"
+	"../inc/fifthTest.h"
+
+1460727563 k:\utest\examples\example_3\testing\inc\firsttest.h
+
+1460982202 k:\utest\examples\example_3\testing\inc\secondtest.h
+
+1460982202 k:\utest\examples\example_3\testing\inc\thirdtest.h
+
+1460982202 k:\utest\examples\example_3\testing\inc\fourthtest.h
+
+1460982202 k:\utest\examples\example_3\testing\inc\fifthtest.h
+
+1460982202 source:k:\utest\examples\example_3\testing\src\secondtest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../../inc/array.h"
+
+1460982202 source:k:\utest\examples\example_3\src\array.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+
+1460982202 source:k:\utest\examples\example_3\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+	"../testing/inc/main_test.h"
+
+1460982202 k:\utest\examples\example_3\testing\inc\main_test.h
+
