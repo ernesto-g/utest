@@ -17,14 +17,16 @@
 */
 
 #include "utest.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-static char utest_printBuffer[256];
-static int utest_flagTestError;
-static int utest_lineTestError;
-static char* utest_fileTestError;
-static int utest_totalTestsCounter;
-static int utest_okTestsCounter;
-static int utest_varAux;
+char utest_printBuffer[256];
+int utest_flagTestError;
+int utest_lineTestError;
+char* utest_fileTestError;
+int utest_totalTestsCounter;
+int utest_okTestsCounter;
+int utest_varAux;
 
 void utest_init(void)
 {
@@ -34,12 +36,13 @@ void utest_init(void)
 
 void utest_printStatistics(void)
 {
-	utest_print("Unit Tests Statistics\r\n");
+
+	utest_print("\r\nUnit Tests Statistics\r\n");
 	if(utest_totalTestsCounter>0)
 	{
 		int per = (int)(((float)utest_okTestsCounter/(float)utest_totalTestsCounter)*100.0);
-		utest_print1("Tests OK : %d %%\r\n",per);
-		utest_print2("Tests: %d. Failed Tests: %d\r\n",utest_totalTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter));
+		utest_print1("Tests OK : %d Percent.\r\n",per);
+		utest_print2("Total Tests: %d\r\nFailed Tests: %d\r\n",utest_totalTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter));
 	}
 	else
 		utest_print("No tests executed.\r\n");
@@ -50,22 +53,77 @@ void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
 {
 	if(fncTest!=0)
 	{
+	    utest_print("________________________________________\r\n");
 		utest_flagTestError=0;
 		utest_print1("TESTING:%s\r\n",testName);
+
 		if(fncBefore!=0)
 			fncBefore();
 		utest_totalTestsCounter++;
 		fncTest();
 		if(utest_flagTestError==1)
 		{
-			utest_print2("TEST FAILED. FILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
+			utest_print2("TEST FAILED\r\nFILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
 		}
 		else
 		{
 			utest_print("TEST OK\r\n");
 			utest_okTestsCounter++;
 		}
-		utest_print("________________________________________\r\n");
+
+	}
+}
+
+void utest_printStartTestingC(char* testName)
+{
+
+    utest_print("\r\n\r\n********************************************************************\r\n");
+	utest_print1("***********    Start Testing of: %20s   ************\r\n",testName);
+    utest_print("********************************************************************\r\n");
+
+}
+void utest_printStatisticsC(char* testName)
+{
+
+    utest_print("********************************************************************\r\n");
+	utest_print1("*******   Unit Tests Statistics: %20s   ************\r\n",testName);
+    utest_print("********************************************************************\r\n");
+
+	if(utest_totalTestsCounter>0)
+	{
+		int per = (int)(((float)utest_okTestsCounter/(float)utest_totalTestsCounter)*100.0);
+        utest_print("**| Total Test  |  Succed Test  |  Failed Test  |  Effectiveness |**\r\n");
+       utest_print4("**|    %3d      |      %3d      |      %3d      |     %3d perc.  |**\r\n",utest_totalTestsCounter,utest_okTestsCounter,(utest_totalTestsCounter-utest_okTestsCounter),per);
+	}
+	else
+		utest_print("No tests executed.\r\n");
+
+    utest_print("********************************************************************\r\n\r\n");
+}
+
+void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
+{
+	if(fncTest!=0)
+	{
+	    utest_print("--------------------------------------------------------------------\r\n");
+		utest_flagTestError=0;
+		utest_print1("%-40s\r\n",testName);
+
+		if(fncBefore!=0)
+			fncBefore();
+		utest_totalTestsCounter++;
+		fncTest();
+		if(utest_flagTestError==1)
+		{
+			utest_print2("TEST FAILED\r\nFILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
+		}
+		else
+		{
+			utest_print("TEST OK\r\n");
+			utest_okTestsCounter++;
+		}
+
+
 	}
 }
 
