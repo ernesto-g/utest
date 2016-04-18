@@ -186,12 +186,12 @@
 
 1460582017 d:\mauriciodavila\utest\examples\example_3\testing\inc\main_test.h
 
-1460940077 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/utest.c
+1460948171 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/utest.c
 	"utest.h"
 	<stdio.h>
 	<stdlib.h>
 
-1460939683 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/utest.h
+1460947940 /Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/utest.h
 
 1460932220 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/testing/src/firstTest.c
 	<utest.h>
@@ -221,7 +221,7 @@
 	<stdlib.h>
 	"../../inc/array.h"
 
-1460936146 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/src/array.c
+1460948180 source:/Users/Mauro/Documents/workspace_curso_c/utest_flaco/utest/examples/example_3/src/array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

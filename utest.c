@@ -63,7 +63,7 @@ void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
 		fncTest();
 		if(utest_flagTestError==1)
 		{
-			utest_print2("TEST FAILED\r\n FILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
+			utest_print2("TEST FAILED\r\nFILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
 		}
 		else
 		{
@@ -115,7 +115,7 @@ void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName
 		fncTest();
 		if(utest_flagTestError==1)
 		{
-			utest_print2("\x1B[31mTEST FAILED\x1B[0m\r\n FILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
+			utest_print2("\x1B[31mTEST FAILED\x1B[0m\r\nFILE:%s LINE:%d\r\n",utest_fileTestError,utest_lineTestError);
 		}
 		else
 		{

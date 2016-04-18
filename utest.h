@@ -20,6 +20,8 @@
 #ifndef UTEST_H
 #define UTEST_H
 
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
+
 // Redefine this macros for specified architecture
 #define utest_print(MSG)     printf(MSG)
 #define utest_print1(MSG,VAR1)   { sprintf(utest_printBuffer,MSG,VAR1); printf(utest_printBuffer);}
@@ -28,16 +30,16 @@
 #define utest_print4(MSG,VAR1,VAR2,VAR3,VAR4)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3,VAR4); printf(utest_printBuffer);}
 //________________________________________________
 
-#define utest_assertEqualsInt(A,B){ if(A!=B){ utest_print2("assert equals failed '%d' != '%d'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertEqualsFloat(A,B){ if(A!=B){ utest_print2("assert equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertEqualsPointer(A,B){ if(A!=B){ utest_print2("assert equals failed '0x%x' != '0x%x'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
+#define utest_assertEqualsInt(A,B){ if(A!=B){ utest_print2("assert equals failed '%d' != '%d'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertEqualsFloat(A,B){ if(A!=B){ utest_print2("assert equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertEqualsPointer(A,B){ if(A!=B){ utest_print2("assert equals failed '0x%x' != '0x%x'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
 
-#define utest_assertNotEqualsInt(A,B){ if(A==B){ utest_print2("assert not equals failed '%d' != '%d'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertNotEqualsFloat(A,B){ if(A==B){ utest_print2("assert not equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; $
-#define utest_assertNotEqualsPointer(A,B){ if(A==B){ utest_print2("assert not equals failed '0x%x' != '0x%x'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
+#define utest_assertNotEqualsInt(A,B){ if(A==B){ utest_print2("assert not equals failed '%d' != '%d'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertNotEqualsFloat(A,B){ if(A==B){ utest_print2("assert not equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; $
+#define utest_assertNotEqualsPointer(A,B){ if(A==B){ utest_print2("assert not equals failed '0x%x' != '0x%x'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
 
-#define utest_assertNull(A){ if(A!=0){ utest_print1("assert null failed. Value: '0x%x' \r\n",A); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertNotNull(A){ if(A==0){ utest_print1("assert not null failed. Value: '0x%x' \r\n",A); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
+#define utest_assertNull(A){ if(A!=0){ utest_print1("assert null failed. Value: '0x%x' \r\n",A); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertNotNull(A){ if(A==0){ utest_print1("assert not null failed. Value: '0x%x' \r\n",A); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
 
 #define utest_assertEqualsString(A,B,S) \
 {										\
@@ -46,7 +48,7 @@
 	{									\
 		if(A[utest_varAux]!=B[utest_varAux])	\
 		{										\
-			utest_print2("assert equals string. Value: '%s' != '%s' \r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return;	\
+			utest_print2("assert equals string. Value: '%s' != '%s' \r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return;	\
 		}										\
 		utest_varAux++;							\
 	}											\
@@ -54,16 +56,16 @@
 
 //-------utest_assert---with---message-------
 
-#define utest_assertEqualsIntMsg(A,B,C){ if(A!=B){ utest_print2("assert equals failed '%d' != '%d'\r\n",A,B);utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertEqualsFloatMsg(A,B,C){ if(A!=B){ utest_print2("assert equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertEqualsPointerMsg(A,B,C){ if(A!=B){ utest_print2("assert equals failed '0x%x' != '0x%x'\r\n",A,B);utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
+#define utest_assertEqualsIntMsg(A,B,C){ if(A!=B){ utest_print2("assert equals failed '%d' != '%d'\r\n",A,B);utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertEqualsFloatMsg(A,B,C){ if(A!=B){ utest_print2("assert equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertEqualsPointerMsg(A,B,C){ if(A!=B){ utest_print2("assert equals failed '0x%x' != '0x%x'\r\n",A,B);utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
 
-#define utest_assertNotEqualsIntMsg(A,B,C){ if(A==B){ utest_print2("assert not equals failed '%d' != '%d'\r\n",A,B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertNotEqualsFloatMsg(A,B,C){ if(A==B){ utest_print2("assert not equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; $
-#define utest_assertNotEqualsPointerMsg(A,B,C){ if(A==B){ utest_print2("assert not equals failed '0x%x' != '0x%x'\r\n",A,B); utest_print1("%s\r\n",B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
+#define utest_assertNotEqualsIntMsg(A,B,C){ if(A==B){ utest_print2("assert not equals failed '%d' != '%d'\r\n",A,B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertNotEqualsFloatMsg(A,B,C){ if(A==B){ utest_print2("assert not equals failed '%f' != '%f'\r\n",(double)A,(double)B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; $
+#define utest_assertNotEqualsPointerMsg(A,B,C){ if(A==B){ utest_print2("assert not equals failed '0x%x' != '0x%x'\r\n",A,B); utest_print1("%s\r\n",B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
 
-#define utest_assertNullMsg(A,B){ if(A!=0){ utest_print1("assert null failed. Value: '0x%x' \r\n",A); utest_print1("%s\r\n",B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
-#define utest_assertNotNullMsg(A,B){ if(A==0){ utest_print1("assert not null failed. Value: '0x%x' \r\n",A); utest_print1("%s\r\n",B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return; } }
+#define utest_assertNullMsg(A,B){ if(A!=0){ utest_print1("assert null failed. Value: '0x%x' \r\n",A); utest_print1("%s\r\n",B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
+#define utest_assertNotNullMsg(A,B){ if(A==0){ utest_print1("assert not null failed. Value: '0x%x' \r\n",A); utest_print1("%s\r\n",B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
 
 #define utest_assertEqualsStringMsg(A,B,S,C) \
 {										\
@@ -72,7 +74,7 @@
 	{									\
 		if(A[utest_varAux]!=B[utest_varAux])	\
 		{										\
-			utest_print2("assert equals string. Value: '%s' != '%s' \r\n",A,B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILE__;return;	\
+			utest_print2("assert equals string. Value: '%s' != '%s' \r\n",A,B); utest_print1("%s\r\n",C); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return;	\
 		}										\
 		utest_varAux++;							\
 	}											\
