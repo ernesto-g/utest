@@ -30,15 +30,7 @@
  */
 int initEmployees(employee* pEmployee, int length)
 {
-    int i;
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
-    {
-        return -1;
-    }
-    for(i=0; i< length; i++)
-    {
-        pEmployee[i].isEmpty=1;
-    }
+
     return 0;
 }
 
@@ -57,24 +49,7 @@ int initEmployees(employee* pEmployee, int length)
  */
 int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
 {
-    int i;
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
-    {
-        return -1;
-    }
-    for(i=0; i< length; i++)
-    {
-        if(pEmployee[i].isEmpty)
-        {
-            pEmployee[i].id=id;
-            strcpy(pEmployee[i].name,name);
-            strcpy(pEmployee[i].lastName,lastName);
-            pEmployee[i].salary = salary;
-            pEmployee[i].sector = sector;
-            pEmployee[i].isEmpty = 0;
-            return 0;
-        }
-    }
+
     return -1;
 }
 
@@ -89,20 +64,7 @@ int addEmployee(employee* pEmployee, int length, int id, char name[],char lastNa
  */
 employee* findEmployeeById(employee* pEmployee, int length,int id)
 {
-    int i;
 
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
-    {
-        return NULL;
-    }
-    for(i=0; i< length; i++)
-    {
-        if(pEmployee[i].id==id && !pEmployee[i].isEmpty)
-        {
-            return &(pEmployee[i]);
-        }
-
-    }
     return NULL;
 
 }
@@ -118,19 +80,7 @@ employee* findEmployeeById(employee* pEmployee, int length,int id)
 int removeEmployee(employee* pEmployee, int length, int id)
 {
 
-    employee *pAuxEmployee = NULL;
 
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
-    {
-        return -1;
-    }
-
-    pAuxEmployee = findEmployeeById(pEmployee, length,id);
-    if( pAuxEmployee != NULL)
-    {
-        pAuxEmployee->isEmpty=1;
-        return 0;
-    }
     return -1;
 }
 
@@ -146,46 +96,7 @@ int removeEmployee(employee* pEmployee, int length, int id)
  */
 int sortEmployeeByName(employee* pEmployee, int length, int order)
 {
-    int i,j;
-    employee auxEmployee;
 
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
-    {
-        return -1;
-    }
-
-    for(i=0; i< length-1; i++)
-    {
-        if(pEmployee[i].isEmpty)
-            continue;
-
-        for(j=i+1; j<length; j++)
-        {
-            if(pEmployee[j].isEmpty)
-                continue;
-
-            if(order)
-            {
-                if(strcmp(pEmployee[i].name,pEmployee[j].name)>0)
-                {
-                    auxEmployee = pEmployee[i];
-                    pEmployee[i] = pEmployee[j];
-                    pEmployee[j] = auxEmployee;
-
-                }
-            }
-            else
-            {
-                if(strcmp(pEmployee[i].name,pEmployee[j].name)<0)
-                {
-                    auxEmployee = pEmployee[i];
-                    pEmployee[i] = pEmployee[j];
-                    pEmployee[j] = auxEmployee;
-
-                }
-            }
-        }
-    }
     return 0;
 }
 
