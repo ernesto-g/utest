@@ -34,6 +34,7 @@ static char* sortedListDown[] = {"Zb","Za","Yc","Ya","Xd","Xb"};
 static int sector[] = {1,1,2,3,4,6};
 static float salary[] = {1000,1000,2000,3000,4000,8000};
 static int id[] = {11,20,3,4,9,99};
+
 static int sortedIdUp[] = {4,3,9,99,11,20};
 static int sortedIdDown[] = {20,11,99,9,3,4};
 
@@ -54,7 +55,7 @@ void fifthTestCase01(void)
 {
     int r;
     r = sortEmployeeByName(arrayEmployees, LENGTH, 1);
-    utest_assertEqualsIntMsg(r,0,"Error in return value <sortEmployeeByName> if ok the correct value to return is: (0)");
+    utest_assertEqualsIntMsg(r,0,"Error en valor de retorno, si se pudo ordenar el array el valor a retornar es (0)");
 
 }
 
@@ -64,8 +65,8 @@ void fifthTestCase02(void)
     sortEmployeeByName(arrayEmployees, LENGTH, 1);
     for (i=0;i < LENGTH;i++)
     {
-        utest_assertEqualsStringMsg(arrayEmployees[i].name,sortedListUp[i],2,"Error value in <.name>");
-        utest_assertEqualsIntMsg(arrayEmployees[i].id,sortedIdUp[i],"Error value in <.id>");
+        utest_assertEqualsStringMsg(arrayEmployees[i].name,sortedListUp[i],2,"El array no se encuentra ordenado de manera ascendente\ndifiere el contenido en <.name>");
+        utest_assertEqualsIntMsg(arrayEmployees[i].id,sortedIdUp[i],"El array no se encuentra ordenado de manera ascendente\ndifiere el contenido en <.id>");
     }
 }
 
@@ -75,17 +76,18 @@ void fifthTestCase03(void)
     sortEmployeeByName(arrayEmployees, LENGTH, 0);
     for (i=0;i < LENGTH;i++)
     {
-        utest_assertEqualsStringMsg(arrayEmployees[i].name,sortedListDown[i],2,"Error value in <.name>");
-        utest_assertEqualsIntMsg(arrayEmployees[i].id,sortedIdDown[i],"Error value in <.id>");
+        utest_assertEqualsStringMsg(arrayEmployees[i].name,sortedListDown[i],2,"El array no se encuentra ordenado de manera descendente\ndifiere el contenido en <.name>");
+        utest_assertEqualsIntMsg(arrayEmployees[i].id,sortedIdDown[i],"El array no se encuentra ordenado de manera descendente\ndifiere el contenido en <.id>");
     }
 }
+
 
 void fifthTestCase04(void)
 {
     int r;
 
     r = sortEmployeeByName(NULL, LENGTH, 0);
-    utest_assertEqualsIntMsg(r,-1,"Error in return value <sortEmployeeByName> if array pointer is NULL, the correct value to return is: (-1)");
+    utest_assertEqualsIntMsg(r,-1,"Error en valor de retorno, si se recibe un puntero NULL el valor a retornar es (-1)");
 }
 
 void fifthTestCase05(void)
@@ -93,7 +95,7 @@ void fifthTestCase05(void)
     int r;
 
     r = sortEmployeeByName(arrayEmployees, 0, 0);
-    utest_assertEqualsIntMsg(r,-1,"Error in return value <sortEmployeeByName> if LENGTH of array is invalid, the correct value to return is: (-1)");
+    utest_assertEqualsIntMsg(r,-1,"Error en valor de retorno, si se recibe una logitud erronea [length < 1]\nel valor a retornar es (-1)");
 }
 
 

@@ -29,6 +29,9 @@
 
 
 
+
+
+
 static employee arrayEmployees[LENGTH];
 
 void firstTestSetup(void)
@@ -42,7 +45,7 @@ void firstTestCase00(void)
     int r;
 
     r = initEmployees(arrayEmployees, LENGTH);
-    utest_assertEqualsIntMsg(r,0,"Error in return value <initEmployees> if ok the correct value to return is: (0)");
+    utest_assertEqualsIntMsg(r,0,"Error en valor de retorno, si se pudo inicializar el array el valor a retornar es (0)");
 }
 
 void firstTestCase01(void)
@@ -51,7 +54,7 @@ void firstTestCase01(void)
     initEmployees(arrayEmployees, LENGTH);
     for (i=0;i < LENGTH;i++)
     {
-        utest_assertEqualsIntMsg(arrayEmployees[i].isEmpty,1,"Error value in <.isEmpty> the correct value is: (1)");
+        utest_assertEqualsIntMsg(arrayEmployees[i].isEmpty,1,"Error en el valor de <.isEmpty> para indicar que una posicion esta vacia es (1)");
     }
 
 }
@@ -59,7 +62,7 @@ void firstTestCase02(void)
 {
     int i;
     i = initEmployees(arrayEmployees, 0);
-    utest_assertEqualsIntMsg(-1,i, "Error in return value <initEmployees> if array pointer is NULL, the correct value to return is: (-1)");
+    utest_assertEqualsIntMsg(-1,i, "Error en valor de retorno, si se recibe una logitud erronea [length < 1]\nel valor a retornar es (-1)");
 
 }
 
@@ -67,7 +70,7 @@ void firstTestCase03(void)
 {
     int i;
     i = initEmployees(NULL, LENGTH);
-    utest_assertEqualsIntMsg(-1,i, "Error in return value <initEmployees> if LENGTH of array is invalid, the correct value to return is: (-1)");
+    utest_assertEqualsIntMsg(-1,i, "Error en valor de retorno, si se recibe un puntero NULL el valor a retornar es (-1)");
 
 }
 

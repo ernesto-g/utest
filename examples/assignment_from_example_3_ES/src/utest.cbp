@@ -32,13 +32,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../../utest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../utest.h" />
 		<Unit filename="../inc/array.h" />
-		<Unit filename="array.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="../testing/inc/fifthTest.h" />
 		<Unit filename="../testing/inc/firstTest.h" />
 		<Unit filename="../testing/inc/fourthTest.h" />
@@ -63,10 +61,12 @@
 		<Unit filename="../testing/src/thirdTest.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../utest.c">
+		<Unit filename="array.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../../utest.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

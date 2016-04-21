@@ -316,7 +316,7 @@
 
 1460982202 k:\utest\examples\example_3\testing\inc\main_test.h
 
-1461006372 source:/home/mauro/Documentos/workspace_c/utest/examples/example_3/src/array.c
+1460984336 source:/home/mauro/Documentos/workspace_c/utest/examples/example_3/src/array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -374,7 +374,7 @@
 	<string.h>
 	"../../inc/array.h"
 
-1461246283 source:/home/mauro/Documentos/workspace_c/utest/examples/example_3/testing/src/fifthTest.c
+1460983942 source:/home/mauro/Documentos/workspace_c/utest/examples/example_3/testing/src/fifthTest.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
@@ -382,6 +382,141 @@
 	"../../inc/array.h"
 
 1460983942 source:/home/mauro/Documentos/workspace_c/utest/examples/example_3/testing/src/firstTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1460983942 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/src/fifthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4/inc/array.h
+
+1460983942 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/src/firstTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1460983727 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/src/fourthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1460983531 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/src/main_test.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../inc/firstTest.h"
+	"../inc/secondTest.h"
+	"../inc/thirdTest.h"
+	"../inc/fourthTest.h"
+	"../inc/fifthTest.h"
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/inc/firstTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/inc/secondTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/inc/thirdTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/inc/fourthTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/inc/fifthTest.h
+
+1460983727 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/src/secondTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1460984397 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/testing/src/thirdTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461171169 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4/src/array.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+
+1461171169 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/src/array.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/inc/array.h
+
+1461243836 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+	"../testing/inc/main_test.h"
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/inc/main_test.h
+
+1461245100 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/src/fifthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461244561 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/src/firstTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461244799 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/src/fourthTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461245270 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/src/main_test.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	"../inc/firstTest.h"
+	"../inc/secondTest.h"
+	"../inc/thirdTest.h"
+	"../inc/fourthTest.h"
+	"../inc/fifthTest.h"
+
+1461243562 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/inc/firstTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/inc/secondTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/inc/thirdTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/inc/fourthTest.h
+
+1460983531 /home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/inc/fifthTest.h
+
+1461245100 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/src/secondTest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461245297 source:/home/mauro/Documentos/workspace_c/utest/examples/example_4_ES/testing/src/thirdTest.c
 	<utest.h>
 	<stdio.h>
 	<stdlib.h>
