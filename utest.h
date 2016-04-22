@@ -90,9 +90,9 @@ extern int utest_okTestsCounter;
 extern int utest_varAux;
 
 void utest_init(void);
-void utest_printStatisticsC(char* testName);
-void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
-void utest_printStartTestingC(char* testName);
+void utest_printStatistics(char* testName);
+void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
+void utest_printStartTesting(char* testName);
 
 #endif
 

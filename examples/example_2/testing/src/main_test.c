@@ -19,6 +19,7 @@
 #include <utest.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "../inc/firstTest.h"
 #include "../inc/secondTest.h"
@@ -35,7 +36,7 @@ void startTesting(void)
     utest_startTest(firstTestCase03,firstTestSetup,"Case: Invalid length [-1]");
     utest_startTest(firstTestCase04,firstTestSetup,"Case: Invalid length [0]");
     utest_startTest(firstTestCase05,firstTestSetup,"Case: Valid length");
-    utest_printStatistics();
+    utest_printStatistics("sortNames()");
     // End Group 01
 
 
@@ -45,7 +46,7 @@ void startTesting(void)
     utest_startTest(secondTestCase01,secondTestSetup,"Case: Found a name");
     utest_startTest(secondTestCase02,secondTestSetup,"Case: Not Found a name");
     utest_startTest(secondTestCase03,secondTestSetup,"Case: Invalid length");
-    utest_printStatistics();
+    utest_printStatistics("findName()");
     // End Group 02
 
 

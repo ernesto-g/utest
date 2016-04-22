@@ -100,12 +100,13 @@
 
 1460564931 /home/mauro/Documentos/workspace_c/utest/examples/example_2/inc/array.h
 
-1460582017 source:d:\mauriciodavila\utest\utest.c
+1461359584 source:d:\mauriciodavila\utest\utest.c
 	"utest.h"
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
-1460582017 d:\mauriciodavila\utest\utest.h
+1461359422 d:\mauriciodavila\utest\utest.h
 
 1460582017 source:d:\mauriciodavila\utest\examples\example_2\testing\src\firsttest.c
 	<utest.h>
@@ -387,4 +388,56 @@
 	<stdlib.h>
 	<string.h>
 	"../../inc/array.h"
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\testing\src\fifthtest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461359121 d:\mauriciodavila\utest\examples\assignment_from_example_3_us\inc\array.h
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\testing\src\firsttest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\testing\src\fourthtest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\testing\src\secondtest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\testing\src\thirdtest.c
+	<utest.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../inc/array.h"
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\src\array.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+
+1461359121 source:d:\mauriciodavila\utest\examples\assignment_from_example_3_us\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/array.h"
+	"../testing/inc/main_test.h"
+
+1461359121 d:\mauriciodavila\utest\examples\assignment_from_example_3_us\testing\inc\main_test.h
 

@@ -4,4 +4,7 @@ examples/example_2/src/bin
 examples/example_2/src/obj
 examples/example_3/src/bin
 examples/example_3/src/obj
-
+examples/assignment_from_example_3_US/src/obj
+examples/assignment_from_example_3_US/src/bin
+examples/assignment_from_example_3_ES/src/obj
+examples/assignment_from_example_3_ES/src/bin

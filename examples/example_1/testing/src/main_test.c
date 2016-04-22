@@ -19,6 +19,7 @@
 #include <utest.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "../inc/firstTest.h"
 #include "../inc/secondTest.h"
@@ -34,7 +35,7 @@ void startTesting(void)
     utest_startTest(firstTestCase01,firstTestSetup,"Test Group 01 Case 01");
     utest_startTest(firstTestCase02,firstTestSetup,"Test Group 01 Case 02");
     utest_startTest(firstTestCase03,firstTestSetup,"Test Group 01 Case 03");
-    utest_printStatistics();
+    utest_printStatistics("Test Group 01");
     // End Group 01
 
 
@@ -42,7 +43,7 @@ void startTesting(void)
     utest_init();
     utest_startTest(secondTestCase01,secondTestSetup,"Test Group 02 Case 01");
     utest_startTest(secondTestCase02,secondTestSetup,"Test Group 02 Case 02");
-    utest_printStatistics();
+    utest_printStatistics("Test Group 02");
     // End Group 02
 
 

@@ -34,65 +34,65 @@ void startTesting(int testGroup)
     {
         case 1:
             // Start Group 01
-            utest_printStartTestingC("initEmployees()");
+            utest_printStartTesting("initEmployees()");
             utest_init();
-            utest_startTestC(firstTestCase00,firstTestSetup,">Case[Verifica el retorno de la funcion al inicializar correctamente el array]");
-            utest_startTestC(firstTestCase01,firstTestSetup,">Case[Analiza si fue inicializado correctamente el array]");
-            utest_startTestC(firstTestCase02,firstTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
-            utest_startTestC(firstTestCase03,firstTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
-            utest_printStatisticsC("initEmployees()");
+            utest_startTest(firstTestCase00,firstTestSetup,">Case[Verifica el retorno de la funcion al inicializar correctamente el array]");
+            utest_startTest(firstTestCase01,firstTestSetup,">Case[Analiza si fue inicializado correctamente el array]");
+            utest_startTest(firstTestCase02,firstTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
+            utest_startTest(firstTestCase03,firstTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
+            utest_printStatistics("initEmployees()");
             // End Group 01
             break;
 
         case 2:
             // Start Group 02
-            utest_printStartTestingC("addEmployees()");
+            utest_printStartTesting("addEmployees()");
             utest_init();
-            utest_startTestC(secondTestCase01,secondTestSetup,">Case[Verifica el retorno de la funcion al agregar correctamente un empleado]");
-            utest_startTestC(secondTestCase02,secondTestSetup,">Case[Verifica el contenido del array luego de agregar correctamente empleados]");
-            utest_startTestC(secondTestCase03,secondTestSetup,">Case[Verifica el retorno de la funcion al agregar un empleado de mas]");
-            utest_startTestC(secondTestCase04,secondTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
-            utest_startTestC(secondTestCase05,secondTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
-            utest_printStatisticsC("addEmployees()");
+            utest_startTest(secondTestCase01,secondTestSetup,">Case[Verifica el retorno de la funcion al agregar correctamente un empleado]");
+            utest_startTest(secondTestCase02,secondTestSetup,">Case[Verifica el contenido del array luego de agregar correctamente empleados]");
+            utest_startTest(secondTestCase03,secondTestSetup,">Case[Verifica el retorno de la funcion al agregar un empleado de mas]");
+            utest_startTest(secondTestCase04,secondTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
+            utest_startTest(secondTestCase05,secondTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
+            utest_printStatistics("addEmployees()");
             // End Group 02
             break;
 
         case 3:
             // Start Group 03
-            utest_printStartTestingC("findEmployeeById()");
+            utest_printStartTesting("findEmployeeById()");
             utest_init();
-            utest_startTestC(thirdTestCase01,thirdTestSetup,">Case[Verifica el retorno de la funcion al encontrar un empleado]");
-            utest_startTestC(thirdTestCase02,thirdTestSetup,">Case[Verifica el contenido del empleado encontrado]");
-            utest_startTestC(thirdTestCase03,thirdTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
-            utest_startTestC(thirdTestCase04,thirdTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
-            utest_startTestC(thirdTestCase05,thirdTestSetup,">Case[Verifica el retorno de la funcion al no encontrar un empleado]");
-            utest_printStatisticsC("findEmployeeById()");
+            utest_startTest(thirdTestCase01,thirdTestSetup,">Case[Verifica el retorno de la funcion al encontrar un empleado]");
+            utest_startTest(thirdTestCase02,thirdTestSetup,">Case[Verifica el contenido del empleado encontrado]");
+            utest_startTest(thirdTestCase03,thirdTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
+            utest_startTest(thirdTestCase04,thirdTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
+            utest_startTest(thirdTestCase05,thirdTestSetup,">Case[Verifica el retorno de la funcion al no encontrar un empleado]");
+            utest_printStatistics("findEmployeeById()");
             // End Group 03
             break;
 
         case 4:
             // Start Group 04
-            utest_printStartTestingC("removeEmployeeById()");
+            utest_printStartTesting("removeEmployeeById()");
             utest_init();
-            utest_startTestC(fourthTestCase01,fourthTestSetup,">Case[Verifica el retorno de la funcion al remover correctamente un empleado]");
-            utest_startTestC(fourthTestCase02,fourthTestSetup,">Case[Verifica el contenido del empleado al eliminarlo]");
-            utest_startTestC(fourthTestCase03,fourthTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
-            utest_startTestC(fourthTestCase04,fourthTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
-            utest_printStatisticsC("removeEmployeeById()");
+            utest_startTest(fourthTestCase01,fourthTestSetup,">Case[Verifica el retorno de la funcion al remover correctamente un empleado]");
+            utest_startTest(fourthTestCase02,fourthTestSetup,">Case[Verifica el contenido del empleado al eliminarlo]");
+            utest_startTest(fourthTestCase03,fourthTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
+            utest_startTest(fourthTestCase04,fourthTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
+            utest_printStatistics("removeEmployeeById()");
             // End Group 04
             break;
 
         case 5:
             // Start Group 05
-            utest_printStartTestingC("sortEmployeeByName()");
+            utest_printStartTesting("sortEmployeeByName()");
             utest_init();
-            utest_startTestC(fifthTestCase01,fifthTestSetup,">Case[Verifica el retorno de la funcion al ordenar correctamente el array]");
-            utest_startTestC(fifthTestCase02,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera ascendente]");
-            utest_startTestC(fifthTestCase02,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera descendente]");
-            utest_startTestC(fifthTestCase03,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
-            utest_startTestC(fifthTestCase04,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
+            utest_startTest(fifthTestCase01,fifthTestSetup,">Case[Verifica el retorno de la funcion al ordenar correctamente el array]");
+            utest_startTest(fifthTestCase02,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera ascendente]");
+            utest_startTest(fifthTestCase02,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera descendente]");
+            utest_startTest(fifthTestCase03,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
+            utest_startTest(fifthTestCase04,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
 
-            utest_printStatisticsC("sortEmployeeByName()");
+            utest_printStatistics("sortEmployeeByName()");
             // End Group 05
             break;
 

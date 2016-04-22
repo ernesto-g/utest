@@ -39,7 +39,7 @@ void utest_init(void)
 }
 
 
-void utest_printStartTestingC(char* testName)
+void utest_printStartTesting(char* testName)
 {
     utest_printErrorBuffer[0] = '\0';
     utest_print("\r\n\r\n********************************************************************\r\n");
@@ -47,7 +47,7 @@ void utest_printStartTestingC(char* testName)
     utest_print("********************************************************************\r\n");
 
 }
-void utest_printStatisticsC(char* testName)
+void utest_printStatistics(char* testName)
 {
 
 
@@ -76,7 +76,7 @@ void utest_printStatisticsC(char* testName)
     utest_printErrorBuffer[0] = '\0'; // CLEAN ERROR BUFFER
 }
 
-void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
+void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName)
 {
 	if(fncTest!=0)
 	{
