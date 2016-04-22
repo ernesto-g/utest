@@ -90,7 +90,7 @@ int removeEmployee(employee* pEmployee, int length, int id)
  * \param pEmployee employee*
  * \param length int
  * \param order int  [1] indicate UP - [0] indicate DOWN
- * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
 int sortEmployeeByName(employee* pEmployee, int length, int order)

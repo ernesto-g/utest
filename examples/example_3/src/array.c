@@ -30,16 +30,20 @@
  */
 int initEmployees(employee* pEmployee, int length)
 {
+    int returnAux = -1;
     int i;
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+
+    if(pEmployee != NULL && length > 0)
     {
-        return -1;
+        for(i=0;i<length;i++)
+        {
+            pEmployee[i].isEmpty = 1;
+        }
+        returnAux = 0;
+
     }
-    for(i=0; i< length; i++)
-    {
-        pEmployee[i].isEmpty=1;
-    }
-    return 0;
+
+    return returnAux;
 }
 
 
@@ -57,25 +61,34 @@ int initEmployees(employee* pEmployee, int length)
  */
 int addEmployee(employee* pEmployee, int length, int id, char name[],char lastName[],float salary,int sector)
 {
+    int returnAux = -1;
     int i;
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+
+    if(pEmployee != NULL && length > 0)
     {
-        return -1;
-    }
-    for(i=0; i< length; i++)
-    {
-        if(pEmployee[i].isEmpty)
+        for(i=0;i<length;i++)
         {
-            pEmployee[i].id=id;
-            strcpy(pEmployee[i].name,name);
-            strcpy(pEmployee[i].lastName,lastName);
-            pEmployee[i].salary = salary;
-            pEmployee[i].sector = sector;
-            pEmployee[i].isEmpty = 0;
-            return 0;
+            if(pEmployee[i].isEmpty == 1)
+            {
+
+                pEmployee[i].id = id;
+                strcpy(pEmployee[i].name,name);
+                strcpy(pEmployee[i].lastName,lastName);
+                pEmployee[i].salary = salary;
+                pEmployee[i].sector = sector;
+                pEmployee[i].isEmpty = 0;
+                returnAux = 0;
+                break;
+            }
+
+
         }
+
+
     }
-    return -1;
+
+    return returnAux;
+
 }
 
 
@@ -89,21 +102,24 @@ int addEmployee(employee* pEmployee, int length, int id, char name[],char lastNa
  */
 employee* findEmployeeById(employee* pEmployee, int length,int id)
 {
+
+    employee* returnAux = NULL;
     int i;
 
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    if(pEmployee != NULL && length > 0)
     {
-        return NULL;
-    }
-    for(i=0; i< length; i++)
-    {
-        if(pEmployee[i].id==id && !pEmployee[i].isEmpty)
+        for(i=0;i<length;i++)
         {
-            return &(pEmployee[i]);
+            if(pEmployee[i].isEmpty == 0 && pEmployee[i].id==id )
+            {
+                returnAux = &pEmployee[i];
+                break;
+            }
         }
 
     }
-    return NULL;
+
+    return returnAux;
 
 }
 
@@ -117,21 +133,17 @@ employee* findEmployeeById(employee* pEmployee, int length,int id)
  */
 int removeEmployee(employee* pEmployee, int length, int id)
 {
+    int returnAux = -1;
+    employee*  auxEmployee = NULL ;
+    auxEmployee = findEmployeeById(pEmployee,length, id);
 
-    employee *pAuxEmployee = NULL;
-
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    if(auxEmployee != NULL)
     {
-        return -1;
+        auxEmployee->isEmpty = 1;
+        returnAux = 0;
     }
 
-    pAuxEmployee = findEmployeeById(pEmployee, length,id);
-    if( pAuxEmployee != NULL)
-    {
-        pAuxEmployee->isEmpty=1;
-        return 0;
-    }
-    return -1;
+    return returnAux;
 }
 
 
@@ -146,49 +158,37 @@ int removeEmployee(employee* pEmployee, int length, int id)
  */
 int sortEmployeeByName(employee* pEmployee, int length, int order)
 {
+    int returnAux = -1;
+    employee aux;
     int i,j;
-    employee auxEmployee;
 
-    if (length < 1 || pEmployee == NULL) // Invalid length or NULL pointer
+    if(pEmployee != NULL && length > 0)
     {
-        return -1;
-    }
-
-    for(i=0; i< length-1; i++)
-    {
-        if(pEmployee[i].isEmpty)
-            continue;
-
-        for(j=i+1; j<length; j++)
+        for(i=0;i<length-1;i++)
         {
-            if(pEmployee[j].isEmpty)
-                continue;
-
-            if(order)
+            for(j=i+1;j<length;j++)
             {
-                if(strcmp(pEmployee[i].name,pEmployee[j].name)>0)
+                if(strcmp(pEmployee[i].name,pEmployee[j].name) > 0 && order == 1)
                 {
-                    auxEmployee = pEmployee[i];
+                    aux = pEmployee[i];
                     pEmployee[i] = pEmployee[j];
-                    pEmployee[j] = auxEmployee;
-
+                    pEmployee[j] = aux;
+                }
+                else if(strcmp(pEmployee[i].name,pEmployee[j].name) < 0 && order == 0)
+                {
+                    aux = pEmployee[i];
+                    pEmployee[i] = pEmployee[j];
+                    pEmployee[j] = aux;
                 }
             }
-            else
-            {
-                if(strcmp(pEmployee[i].name,pEmployee[j].name)<0)
-                {
-                    auxEmployee = pEmployee[i];
-                    pEmployee[i] = pEmployee[j];
-                    pEmployee[j] = auxEmployee;
 
-                }
-            }
         }
-    }
-    return 0;
-}
+        returnAux = 0;
 
+    }
+
+    return returnAux;
+}
 
 
 /** \brief
@@ -208,6 +208,7 @@ int printEmployees(employee* pEmployee, int length)
             printf("\n%6i - %-16s - %-16s - %4.2f - %6d",pEmployee[i].id, pEmployee[i].name, pEmployee[i].lastName, pEmployee[i].salary, pEmployee[i].sector );
     }
     return 0;
+
 }
 
 
