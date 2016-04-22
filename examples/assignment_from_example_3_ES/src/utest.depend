@@ -24,7 +24,7 @@
 
 1460470560 /home/mauro/Documentos/workspace_c/utest/examples/example_1/src/firstTest.h
 
-1460984380 /home/mauro/Documentos/workspace_c/utest/utest.h
+1461355607 /home/mauro/Documentos/workspace_c/utest/utest.h
 
 1460482967 /home/mauro/Documentos/workspace_c/utest/utest.c
 	"utest.h"
@@ -56,10 +56,11 @@
 1460486298 source:/home/mauro/Documentos/workspace_c/utest/examples/example_1/testing/src/secondTest.c
 	<utest.h>
 
-1460985218 source:/home/mauro/Documentos/workspace_c/utest/utest.c
+1461355607 source:/home/mauro/Documentos/workspace_c/utest/utest.c
 	"utest.h"
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
 1460577174 source:/home/mauro/Documentos/workspace_c/utest/examples/example_2/testing/src/firstTest.c
 	<utest.h>
@@ -589,7 +590,7 @@
 	<string.h>
 	"../../inc/array.h"
 
-1461336505 source:/home/mauro/Documentos/workspace_c/utest/examples/assignment_from_example_3_ES/src/array.c
+1461339866 source:/home/mauro/Documentos/workspace_c/utest/examples/assignment_from_example_3_ES/src/array.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -22,12 +22,12 @@
 
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : strrchr(__FILE__, '\\') ? strrchr(__FILE__, '\\') + 1 : __FILE__)
 
-// Redefine this macros for specified architecture
-#define utest_print(MSG)     printf(MSG)
-#define utest_print1(MSG,VAR1)   { sprintf(utest_printBuffer,MSG,VAR1); printf(utest_printBuffer);}
-#define utest_print2(MSG,VAR1,VAR2)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2); printf(utest_printBuffer);}
-#define utest_print3(MSG,VAR1,VAR2,VAR3)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3); printf(utest_printBuffer);}
-#define utest_print4(MSG,VAR1,VAR2,VAR3,VAR4)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3,VAR4); printf(utest_printBuffer);}
+// Redefine this macros for specified architecture utest_printErrorBuffer
+#define utest_print(MSG) { sprintf(utest_printBuffer,MSG); strcat(utest_printErrorBuffer,utest_printBuffer);}
+#define utest_print1(MSG,VAR1)   { sprintf(utest_printBuffer,MSG,VAR1); strcat(utest_printErrorBuffer,utest_printBuffer);}
+#define utest_print2(MSG,VAR1,VAR2)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2); strcat(utest_printErrorBuffer,utest_printBuffer);}
+#define utest_print3(MSG,VAR1,VAR2,VAR3)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3); strcat(utest_printErrorBuffer,utest_printBuffer);}
+#define utest_print4(MSG,VAR1,VAR2,VAR3,VAR4)  { sprintf(utest_printBuffer,MSG,VAR1,VAR2,VAR3,VAR4); strcat(utest_printErrorBuffer,utest_printBuffer);}
 //________________________________________________
 
 #define utest_assertEqualsInt(A,B){ if(A!=B){ utest_print2("assert equals failed '%d' != '%d'\r\n",A,B); utest_flagTestError=1; utest_lineTestError = __LINE__;  utest_fileTestError = __FILENAME__;return; } }
@@ -81,6 +81,7 @@
 }
 
 extern char utest_printBuffer[256];
+extern char utest_printErrorBuffer[409600];
 extern int utest_flagTestError;
 extern int utest_lineTestError;
 extern char* utest_fileTestError;
@@ -89,10 +90,6 @@ extern int utest_okTestsCounter;
 extern int utest_varAux;
 
 void utest_init(void);
-
-void utest_printStatistics(void);
-void utest_startTest(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
-
 void utest_printStatisticsC(char* testName);
 void utest_startTestC(void(*fncTest)(void),void(*fncBefore)(void),char* testName);
 void utest_printStartTestingC(char* testName);

@@ -33,10 +33,10 @@ int main(void)
 
     #ifdef TEST
         startTesting(1);
-        startTesting(2);
-        startTesting(3);
-        startTesting(4);
-        startTesting(5);
+        //startTesting(2);
+        //startTesting(3);
+        //startTesting(4);
+        //startTesting(5);
 
     #else
         run();
