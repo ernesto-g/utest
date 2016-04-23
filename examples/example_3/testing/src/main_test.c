@@ -86,9 +86,9 @@ void startTesting(int testGroup)
             utest_init();
             utest_startTest(fifthTestCase01,fifthTestSetup,">Case[Return when sort a Employees array]");
             utest_startTest(fifthTestCase02,fifthTestSetup,">Case[Content of sorted a Employees array UP]");
-            utest_startTest(fifthTestCase02,fifthTestSetup,">Case[Content of sorted a Employees array DOWN]");
-            utest_startTest(fifthTestCase03,fifthTestSetup,">Case[Return of sorted a Employees array with NULL pointer to array]");
-            utest_startTest(fifthTestCase04,fifthTestSetup,">Case[Return of sorted a Employees array with invalid array length]");
+            utest_startTest(fifthTestCase03,fifthTestSetup,">Case[Content of sorted a Employees array DOWN]");
+            utest_startTest(fifthTestCase04,fifthTestSetup,">Case[Return of sorted a Employees array with NULL pointer to array]");
+            utest_startTest(fifthTestCase05,fifthTestSetup,">Case[Return of sorted a Employees array with invalid array length]");
 
             utest_printStatistics("sortEmployeeByName()");
             // End Group 05

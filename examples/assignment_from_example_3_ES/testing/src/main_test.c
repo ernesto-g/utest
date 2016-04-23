@@ -88,9 +88,9 @@ void startTesting(int testGroup)
             utest_init();
             utest_startTest(fifthTestCase01,fifthTestSetup,">Case[Verifica el retorno de la funcion al ordenar correctamente el array]");
             utest_startTest(fifthTestCase02,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera ascendente]");
-            utest_startTest(fifthTestCase02,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera descendente]");
-            utest_startTest(fifthTestCase03,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
-            utest_startTest(fifthTestCase04,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
+            utest_startTest(fifthTestCase03,fifthTestSetup,">Case[Verifica el contenido del array luego de ordenar de manera descendente]");
+            utest_startTest(fifthTestCase04,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir un puntero NULL]");
+            utest_startTest(fifthTestCase05,fifthTestSetup,">Case[Verifica el retorno de la funcion al recibir una longitud invalida]");
 
             utest_printStatistics("sortEmployeeByName()");
             // End Group 05
